@@ -1,0 +1,10 @@
+Installation (for Ubuntu):
+    * sudo aptitude install python2.7 python-setuptools python-imaging
+    * sudo easy_install pip
+    * sudo pip install virtualenv
+
+    * download source code
+    * create virtualenv
+    * pip install requirements.txt
+    * edit settings.py
+    * 
