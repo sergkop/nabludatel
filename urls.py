@@ -1,17 +1,23 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf import settings
+from django.conf.urls.defaults import *
+from django.contrib import admin
+from cms.sitemaps import CMSSitemap
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
 
+# TODO: sitemap doesn't work yet (because of redirect to sitemap.xml/)
 urlpatterns = patterns('',
-    # Examples:
+    url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
+    (r'^admin/', include(admin.site.urls)),
+
+    url(r'^', include('cms.urls')),
     # url(r'^$', 'nabludatel.views.home', name='home'),
     # url(r'^nabludatel/', include('nabludatel.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )
+
+if settings.DEBUG:
+    urlpatterns = patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+                {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+        url(r'', include('django.contrib.staticfiles.urls')),
+    ) + urlpatterns

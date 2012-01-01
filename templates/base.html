@@ -1,0 +1,24 @@
+{% load cms_tags sekizai_tags %}
+{% load menu_tags %}
+<html>
+<head>
+    <title>{% page_attribute page_title %}</title>
+    <meta name="description" content="{% page_attribute meta_description %}"/>
+    <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
+    {% render_block "css" %}
+</head>
+<body>
+    {% show_menu %}
+    {% show_breadcrumb %}
+    {% placeholder base_content %}
+    {% block base_content%}{% endblock %}
+    {% render_block "js" %}
+
+    <!--script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script-->
+</body>
+</html>

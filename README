@@ -3,8 +3,13 @@ Installation (for Ubuntu):
     * sudo easy_install pip
     * sudo pip install virtualenv
 
-    * download source code
+    * download source code (automate using fabric and git)
     * create virtualenv
+    * sudo aptitude python-psycopg2 / sudo aptitude install python-mysql
     * pip install requirements.txt
     * edit settings.py
-    * 
+    * make sure that propriate media directories (static/, media/) are writable
+    * python manage.py syncdb --all
+    * python manage.py migrate --fake
+
+    * lighttpd or 'python manage.py runserver' for development purposes

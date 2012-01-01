@@ -1,0 +1,16 @@
+* Write fabric script for automatic deployment
+* Use virtualenv
+* Make backups/portability of db data to another server
+* Is it possible to use one instance of django-cms for two sites?
+* Use caching
+* How to prevent DOS attacks?
+* Tests
+* sitemap.xml/robots.txt; index with google, humanstxt.org
+* google analytics
+* keep all the old paths of the site
+* registration/login system; allow using fb and vk; port old users
+* move content from the old site
+* use django-blog-zinnia for blog-like functionality
+* rss feeds
+* site search
+* Comments with disqus
