@@ -1,15 +1,18 @@
 Installation (for Ubuntu):
-    * sudo aptitude install python2.7 python-setuptools python-imaging
+    * sudo aptitude install python2.7 python-setuptools git
+    * sudo aptitude python-psycopg2 / sudo aptitude install python-mysql
     * sudo easy_install pip
     * sudo pip install virtualenv
 
-    * download source code (automate using fabric and git)
-    * create virtualenv
-    * sudo aptitude python-psycopg2 / sudo aptitude install python-mysql
-    * pip install requirements.txt
+    * virtualenv --no-site-packages VIRTUAL_ENV_DIR
+    * source VIRTUAL_ENV_DIR/bin/activate
+    * git clone git://github.com/sergkop/nabludatel.git CODE_DIR
+    * pip install -r CODE_DIR/requirements.txt
+
     * edit settings.py
     * make sure that propriate media directories (static/, media/) are writable
+
     * python manage.py syncdb --all
     * python manage.py migrate --fake
 
-    * lighttpd or 'python manage.py runserver' for development purposes
+    * lighttpd or 'python manage.py runserver' for development purposes (with proper virtualenv)

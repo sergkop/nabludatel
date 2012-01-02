@@ -5,7 +5,7 @@ from cms.sitemaps import CMSSitemap
 
 admin.autodiscover()
 
-# TODO: sitemap doesn't work yet (because of redirect to sitemap.xml/)
+# TODO: sitemap doesn't work yet (because of redirect to sitemap.xml/) - see APPEND_SLASH
 urlpatterns = patterns('',
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     (r'^admin/', include(admin.site.urls)),
