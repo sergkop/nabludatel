@@ -1,4 +1,4 @@
-* using urls with slashes; keep all the old paths of the site
+* using urls with slashes; keep all the old paths of the site or put redirects
 * registration/login system; allow using fb, vk, google (loginza.ru); recover old users accounts
 * Is it possible to use one instance of django-cms for two sites?
 * sitemap.xml/robots.txt; index with google
@@ -6,6 +6,10 @@
 * site search
 * Comments with disqus
 * Use pinax
+
+Design:
+    * Dropdown menus for some main menu items
+    * Main menu behaviour on reducing page width
 
 Later:
     * move content from the old site
@@ -18,3 +22,4 @@ Server:
     * How to prevent DOS attacks?
     * Perform load testing. Use memcached and django-debug-toolbar to find bottlenecks
     * Install google analytics
+    * serve static files using nginx

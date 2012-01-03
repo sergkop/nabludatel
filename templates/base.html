@@ -6,14 +6,66 @@
     <meta name="description" content="{% page_attribute meta_description %}"/>
     <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
     {% render_block "css" %}
+    <link href="{{ MEDIA_URL }}css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    {% show_menu %}
-    {% show_breadcrumb %}
-    {% placeholder base_content %}
-    {% block base_content%}{% endblock %}
-    {% render_block "js" %}
+    <div id="header">
+        <img id="logo" src="{{ MEDIA_URL }}images/logo.jpg" alt="Гражданин Наблюдатель"/>
+        <h1 style="display:inline; vertical-align: middle;"><a href="/" id="title_link">Гражданин наблюдатель</a></h1>
+    </div>
 
+    <div style="margin-top: 10px;">
+        <ul class="main_menu">
+            <li><a href="/">Главная</a></li>
+            <li><a href="">О проекте</a></li>
+            <li><a href="">Рабочие группы</a></li>
+            <li><a href="">Проекты</a></li>
+            <li><a href="">Наши наблюдения</a></li>
+            <li><a href="">Итоги выборов</a></li>
+            <li><a href="">Библиотечка наблюдателя</a></li>
+            <li><a href="">Форум</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </div>
+
+    <div id="main">
+        <div id="right_menu">
+            <div>
+                <h2 class="side_menu_header">Информация о итогах</h2>
+                Данные по протоколам наших наблюдателей
+            </div>
+        </div>
+
+        <div id="left_menu">
+            <h2 class="side_menu_header">Для наблюдателей</h2>
+            <ul id="left_menu_ul">
+                <li><a href="">Кто такой наблюдатель</a></li>
+                <li><a href="">Что должен делать наблюдатель</a></li>
+                <li><a href="">Зачем наблюдать за выборами</a></li>
+                <li><a href="">Как стать наблюдателем</a></li>
+                <li><a href="">Куда идут результаты</a></li>
+                <li><a href="">Записаться в наблюдатели</a></li>
+                <li><a href="">Полезно почитать наблюдателю</a></li>
+            </ul>
+
+            <h2 class="side_menu_header">Наши друзья</h2>
+            <div style="text-align: center;">
+                <a href="http://www.kartanarusheniy.ru/">
+                    <img width="180" border="0" height="300" alt="КАРТА НАРУШЕНИЙ НА ВЫБОРАХ"
+                    title="Карта нарушений на выборах. Совместный проект ¨Газеты.Ru¨ и Ассоциации ¨Голос¨ "
+                    src="http://files.kartanarusheniy.ru/adv/240-400.gif">
+                </a>
+            </div>
+        </div>
+
+        <div>{% block content %}{% endblock %}</div>
+
+    <!--{% show_menu %}-->
+    <!--{% show_breadcrumb %}-->
+    {% placeholder base_content %}
+    
+    {% render_block "js" %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}libs/jquery/jquery.js"></script>
     <!--script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

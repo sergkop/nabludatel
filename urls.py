@@ -9,10 +9,11 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     (r'^admin/', include(admin.site.urls)),
+    #(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
+    url(r'^', include('navigation.urls')),
+    url(r'^users/', include('users.urls')),
     url(r'^', include('cms.urls')),
-    # url(r'^$', 'nabludatel.views.home', name='home'),
-    # url(r'^nabludatel/', include('nabludatel.foo.urls')),
 )
 
 if settings.DEBUG:
