@@ -1,5 +1,31 @@
 {% extends "base.html" %}
 
+{% load loginza_widget %}
+
 {% block content %}
 "Гражданин наблюдатель" подвел первые итоги выборов 4 декабря
+
+
+    {% if user.is_authenticated %} 
+        Добро пожаловать, <strong>{{ user }}</strong>!<br><br> 
+        <a href="/users/logout/?next=%2F">Выйти?</a>
+    {% else %}
+    <div>
+        <strong>loginza_iframe:</strong><br>
+        {% loginza_iframe %}
+    </div>
+
+    <div>
+        <strong>loginza_button:</strong><br>
+        {% loginza_button "Войти, используя соцсети" %}
+    </div>
+
+
+    <div>
+        <strong>loginza_icons:</strong><br>
+        {% loginza_icons "Войти, используя соцсети" %}
+    </div>
+
+    {% endif %}
+
 {% endblock %}

@@ -1,0 +1,32 @@
+1) Добавить в README
+ln -s /env-nabludatel/lib/python2.6/site-packages/cms/static/cms /env-nabludatel/nabludatel/static/cms (PROJECT_DIR="/env-nabludatel/nabludatel")
+
+2) В приложении файл для запуска fcgi
+chmod 744 /etc/init.d/nabludatel
+cd /etc/init.d
+update-rc.d nabludatel defaults
+
+3) site_settings.py
+FORCE_SCRIPT_NAME = ""
+
+4) Часть конфига для lighttpd, /etc/lighttpd/lighttpd.conf
+alias.url=(
+"/media/"  => "/env-nabludatel/lib/python2.6/site-packages/django/contrib/admin/media/",
+"/static/admin/" => "/env-nabludatel/lib/python2.6/site-packages/django/contrib/admin/media/",
+"/static/" => "/env-nabludatel/nabludatel/static/",
+)
+url.rewrite-once = (
+"^(/media.*)$" => "$1",
+"^(/static.*)$" => "$1",
+"^/favicon\.ico$" => "/media/favicon.ico",
+"^(/.*)$" => "/nabludatel.fcgi$1",
+)
+accesslog.filename="/var/log/lighttpd/nabludatel.org.access.log"
+fastcgi.server = (
+"/nabludatel.fcgi" => (
+"main" => (
+"socket" => "/var/run/nabludatel.socket",
+"check-local" => "disable",
+)
+)
+)

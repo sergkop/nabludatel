@@ -7,3 +7,5 @@ django-reversion==1.4
 django-filer
 cmsplugin-filer
 django-cms-search
+django-loginza
+flup

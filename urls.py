@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     #(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
     url(r'^', include('navigation.urls')),
+    url(r'^loginza/', include('loginza.urls')),
     url(r'^users/', include('users.urls')),
     url(r'^', include('cms.urls')),
 )

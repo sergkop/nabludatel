@@ -6,6 +6,7 @@
 * site search
 * Comments with disqus
 * Use pinax
+* What if user logged in with one social network account and then tries to do it with another?
 
 Design:
     * Dropdown menus for some main menu items

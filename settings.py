@@ -3,16 +3,9 @@ gettext = lambda s: s
 
 from site_settings import *
 
-# Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
 TIME_ZONE = 'Europe/Moscow'
 
-# Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'ru-RU'
 
@@ -76,6 +69,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'sekizai.context_processors.sekizai',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'loginza.authentication.LoginzaBackend',
+)
+
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
@@ -96,12 +94,14 @@ CMS_PERMISSION = True
 CMS_SEO_FIELDS = True
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     'cms',
     'mptt',
@@ -128,8 +128,7 @@ INSTALLED_APPS = (
     'reversion',
     #'cms_search',
 
-    'django.contrib.admin',
-    'django.contrib.sitemaps',
+    'loginza',
     'users',
 )
 
@@ -156,3 +155,11 @@ LOGGING = {
         },
     }
 }
+
+# Loginza settings
+LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,mailru,twitter,rambler,odnoklassniki'
+#google, yandex, mailruapi, mailru, vkontakte, facebook, twitter, loginza, myopenid, webmoney, rambler, flickr, lastfm, verisign, aol, steam, openid.
+
+# !!!! can't use reverse url resolver here (raises ImportError), so we should carefully control paths
+LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
+
