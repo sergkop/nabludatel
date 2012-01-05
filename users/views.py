@@ -11,9 +11,11 @@ from users.forms import CompleteRegistrationForm
 def profile(request):
     return HttpResponse('test1')
 
+#from django.views.decorators.csrf import csrf_exempt
+#@csrf_exempt
 def complete_registration(request):
     if request.user.is_authenticated():
-        return HttpResponseForbidden('sdfsd')
+        return HttpResponseForbidden('sdfsd') # TODO: redirect
 
     try:
         identity_id = request.session.get('users_complete_reg_id', None)

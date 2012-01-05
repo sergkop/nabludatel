@@ -61,12 +61,13 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    #'django.core.context_processors.i18n',
+    'django.core.context_processors.i18n',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
+    'zinnia.context_processors.version'
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -96,12 +97,13 @@ CMS_SEO_FIELDS = True
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.comments',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.sessions',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'django.contrib.staticfiles',
 
     'cms',
     'mptt',
@@ -112,7 +114,6 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'cms.plugins.googlemap',
     'cms.plugins.link',
-    #'cms.plugins.snippet', # blocked for security issues
     'cms.plugins.picture',
     'cms.plugins.text',
     'cms.plugins.twitter',
@@ -130,6 +131,10 @@ INSTALLED_APPS = (
 
     'loginza',
     'users',
+
+    'tagging',
+    'zinnia',
+    'zinnia.plugins',
 )
 
 # TODO: configure logging
@@ -163,3 +168,4 @@ LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,ma
 # !!!! can't use reverse url resolver here (raises ImportError), so we should carefully control paths
 LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
 
+#ZINNIA_ENTRY_BASE_MODEL = 'zinnia.plugins.placeholder.EntryPlaceholder'
