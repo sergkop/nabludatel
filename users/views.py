@@ -1,18 +1,28 @@
 from django.contrib import messages, auth
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import redirect, render_to_response
 from django.template import RequestContext
+from django.utils import simplejson as json
 
-from loginza.models import UserMap
+from loginza.models import Identity, UserMap
 from loginza.templatetags.loginza_widget import _return_path
 
 from users.forms import CompleteRegistrationForm
+import users.signals
 
 def profile(request):
-    return HttpResponse('test1')
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect() # TODO: login page
 
-#from django.views.decorators.csrf import csrf_exempt
-#@csrf_exempt
+    user_map = UserMap.objects.get(user=request.user) # TODO: what if there are several user maps?
+    data = json.loads(user_map.identity.data)
+
+    context = {
+        'user_data': data,
+    }
+    return render_to_response('users/profile.html', context_instance=RequestContext(request, context))
+
+# TODO: what if user has previously logged in with another social network account
 def complete_registration(request):
     if request.user.is_authenticated():
         return HttpResponseForbidden('sdfsd') # TODO: redirect

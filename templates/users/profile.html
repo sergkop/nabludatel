@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ user_data.name.first_name}} {{ user_data.name.last_name}}</h2>
+
+{{ user }}
+
+<div>
+    <img src="{{ user_data.photo }}"/>
+    
+</div>
+
+<a href="{{ user_data.identity }}">Страница</a>
+
+{% endblock %}

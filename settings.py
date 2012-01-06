@@ -162,7 +162,7 @@ LOGGING = {
 }
 
 # Loginza settings
-LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,mailru,twitter,rambler,odnoklassniki'
+#LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,mailru,twitter,rambler,odnoklassniki'
 #google, yandex, mailruapi, mailru, vkontakte, facebook, twitter, loginza, myopenid, webmoney, rambler, flickr, lastfm, verisign, aol, steam, openid.
 
 # !!!! can't use reverse url resolver here (raises ImportError), so we should carefully control paths

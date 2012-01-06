@@ -1,27 +1,43 @@
-* using urls with slashes; keep all the old paths of the site or put redirects
-* registration/login system; allow using fb, vk, google (loginza.ru); recover old users accounts
-  setup loginza widget ID and API signature
-* Is it possible to use one instance of django-cms for two sites?
-* sitemap.xml/robots.txt; index with google
-* use django-blog-zinnia for blog-like functionality; rss feeds
-* site search
-* Comments with disqus
-* Use pinax
-* What if user logged in with one social network account and then tries to do it with another?
-* Problems with using static files
-* Zinnia should use the same media files (like jquery) as main system
-* Use 'python manage.py dumpdata/loaddata' and put db file in repository
+Blog:
+    * Zinnia should use the same media files (like jquery) as main system
+    * use django-blog-zinnia for blog-like functionality; rss feeds
+    * Comments with disqus or facebook/vkontakte
+
+Login:
+    * registration/login system; allow using fb, vk, google (loginza.ru); recover old users accounts
+      setup loginza widget ID and API signature
+    * Add odnoklassniki by monkeypatching django-loginza
+    * What if user logged in with one social network account and then tries to do it with another?
+    * Introduce email verification
+    * система аутентификации и страница пользователя, можно ли совмещать разные типы логина?
+      как насчет пароля для юзеров пришедших через loginza?
+      Альтернатива - uLogin - http://habrahabr.ru/blogs/webdev/130893/.
+    * удобный способ совместить логин форму с регистрационной (найти)
 
 Design:
     * Dropdown menus for some main menu items
     * Main menu behaviour on reducing page width
     * Sharing buttons (facebook, vkontakte, etc)
+    * use http://builder.yaml.de/ to generate layout
+    * разработать набросок дизайна главной страницы
+    * https://developers.facebook.com/docs/plugins/
+
+Initialization:
+    * Set proper domain in the entry of Sites model
+    * Use 'python manage.py dumpdata/loaddata' and put db file in repository
 
 Later:
+    * site search
+    * Is it possible to use one instance of django-cms for two sites?
+    * using urls with slashes; keep all the old paths of the site or put redirects
+    * Use pinax
+    * Problems with using static files
+    * sitemap.xml/robots.txt; index with google
     * move content from the old site
     * Write fabric script for automatic deployment
     * Use virtualenvwrapper?
     * Tests
+    * Ability to generate a static version of the site (in case of DDOS)
 
 Server:
     * Make backups/portability of db data to another server
@@ -29,14 +45,3 @@ Server:
     * Perform load testing. Use memcached and django-debug-toolbar to find bottlenecks
     * Install google analytics
     * serve static files using nginx
-
-
-* удобный способ совместить логин форму с регистрационной (найти)
-* система аутентификации и страница пользователя, email подтверждение для тех
-  кто логинился через loginza, можно ли совмещать разные типы логина?
-  как насчет пароля для юзеров пришедших через loginza?
-  Альтернатива - uLogin - http://habrahabr.ru/blogs/webdev/130893/.
-* прикрутить django-blog-zinnia к сайту
-* поиск по сайту
-* Получить админский доступ к старому сайту
-* Возможность сгенерировать статическую версию сайта на случай DDOS

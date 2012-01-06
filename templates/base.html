@@ -8,9 +8,18 @@
     <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
     {% render_block "css" %}
     <link href="{{ MEDIA_URL }}css/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 </head>
 <body>
     <div id="header">
+        <div style="float:right;">
+            {% if user.is_authenticated %} 
+                <a href="{% url profile %}" class="header_link">{{ user }}</a>
+                <a href="/users/logout/?next=%2F" class="header_link">Выйти?</a>
+            {% else %}
+                {% loginza_button providers_set="google,vkontakte,facebook,livejournal,yandex,mailru,rambler,twitter,odnoklassniki" %}
+            {% endif %}
+        </div>
         <img id="logo" src="{{ MEDIA_URL }}images/logo.jpg" alt="Гражданин Наблюдатель"/>
         <h1 style="display:inline; vertical-align: middle;"><a href="/" id="title_link">Гражданин наблюдатель</a></h1>
     </div>
@@ -35,6 +44,19 @@
                 <h2 class="side_menu_header">Информация о итогах</h2>
                 Данные по протоколам наших наблюдателей
             </div>
+
+            <div>
+                <h2 class="side_menu_header">Мы в соц. сетях</h2>
+
+                <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fnabludatel.org&amp;width=292&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>
+
+                <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?47"></script>
+                <!-- VK Widget -->
+                <div id="vk_groups"></div>
+                <script type="text/javascript">
+                    VK.Widgets.Group("vk_groups", {mode: 1, width: "300", height: "290"}, 28505189);
+                </script>
+            </div>
         </div>
 
         <div id="left_menu">
@@ -49,8 +71,31 @@
                 <li><a href="">Полезно почитать наблюдателю</a></li>
             </ul>
 
+
+            <div id="cse-search-form" style="width: 100%;">Loading</div>
+            <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+            <script type="text/javascript"> 
+            google.load('search', '1', {language : 'ru'});
+            google.setOnLoadCallback(function() {
+                var customSearchControl = new google.search.CustomSearchControl(
+                '007084942556480968662:efy46j0mxa8');
+
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                var options = new google.search.DrawOptions();
+                options.enableSearchboxOnly("http://127.0.0.1:8000/search_results");
+                customSearchControl.draw('cse-search-form', options);
+            }, true);
+            </script>
+            <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+
             <h2 class="side_menu_header">Наши друзья</h2>
             <div style="text-align: center;">
+                <a href="http://nabludatel_org.livejournal.com">
+                    <img width="204" border="5" height="50" alt="Гражданин наблюдатель в Живом Журнале"
+                        title="ЖЖ Гражданин наблюдатель" src="http://pics.livejournal.com/djatel_2008/pic/0000e6ds">
+                </a>
+
                 <a href="http://www.kartanarusheniy.ru/">
                     <img width="180" border="0" height="300" alt="КАРТА НАРУШЕНИЙ НА ВЫБОРАХ"
                     title="Карта нарушений на выборах. Совместный проект ¨Газеты.Ru¨ и Ассоциации ¨Голос¨ "
@@ -59,12 +104,14 @@
             </div>
         </div>
 
-        <div>{% block content %}{% endblock %}</div>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
 
     <!--{% show_menu %}-->
     <!--{% show_breadcrumb %}-->
     {% placeholder base_content %}
-    
+
     {% render_block "js" %}
     <script type="text/javascript" src="{{ MEDIA_URL }}libs/jquery/jquery.js"></script>
     <!--script>
