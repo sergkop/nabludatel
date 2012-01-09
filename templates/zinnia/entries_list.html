@@ -1,0 +1,96 @@
+{% load i18n %}
+
+    {% for entry in entries %}
+
+    {% with object=entry %}
+
+    <div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
+        <div class="entry-header">
+            <h2 class="entry-title">
+            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+                {{ object.title }}
+            </a>
+            </h2>
+            <p class="entry-info">
+            {% if object.authors.count %}
+            Автор
+            {% for author in object.authors.all %}
+            <span class="vcard author">
+                <a href="{% url zinnia_author_detail author %}" class="fn nickname url" rel="author"
+                title="Показать записи {{ author }}">{{ author }}</a>
+            </span>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+            {% trans "on" %}
+            {% else %}
+            Написано
+            {% endif %}
+            <abbr class="published" title="{{ object.creation_date|date:"c" }}Z">{{ object.creation_date|date:"DATE_FORMAT" }}</abbr>
+            {% if object.categories.count %}
+            {% trans "in" %}
+            {% for category in object.categories.all %}
+            <a href="{{ category.get_absolute_url }}" title="{{ category }}" rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}.
+            </p>
+        </div>
+
+        <div class="entry-body">
+            {% if object.image %}
+            <div class="entry-image">
+            <p>
+                {% if continue_reading %}
+                <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+                {% endif %}
+                <img src="{{ object.image.url }}" alt="{{ object.title }}" class="left" />
+                {% if continue_reading %}
+                </a>
+                {% endif %}
+            </p>
+            </div>
+            {% endif %}
+            <div class="entry-content">
+            {{ object.content|safe }}
+            {% if continue_reading %}
+            <p class="continue-reading">
+                <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+                Читать дальше
+                </a>
+            </p>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="entry-footer">
+            <p class="entry-tags">
+            <strong>Тэги</strong>:
+            {% for tag in tag_list %}
+            <a href="{% url zinnia_tag_detail tag %}" title="Тэг {{ tag }}" rel="tag">{{ tag }}</a>
+            {% empty %}
+            <span>Нет тэгов</span>
+            {% endfor %}
+            </p>
+
+            <p class="entry-comments">
+            <strong>{% trans "Discussions" %}</strong> :
+            {% with comment_count=object.comments.count %}
+            {% if comment_count %}
+            <a href="{{ object.get_absolute_url }}#comments" title="{{ object.title }}">
+                {% blocktrans count comment_count=comment_count %}{{ comment_count }} comment{% plural %}{{ comment_count }} comments{% endblocktrans %}
+            </a>
+            {% else %}
+            {% if object.comments_are_open %}
+            Пока нет комментариев.
+            <a href="{{ object.get_absolute_url }}#comments" title="{{ object.title }}">
+                Будьте первым!
+            </a>
+            {% else %}
+                Комментарии не разрешены.
+            {% endif %}
+            {% endif %}
+            {% endwith %}
+            </p>
+        </div>
+    </div>
+    {% endwith %}
+
+    {% empty %}
+    <div>Записей еще нет</div>
+  {% endfor %}

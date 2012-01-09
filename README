@@ -12,7 +12,9 @@ Installation (for Ubuntu):
     * edit settings.py
     * make sure that propriate media directories (static/, media/) are writable
 
-    * python manage.py syncdb --all
+    * 'python manage.py syncdb --all' (agree to create superuser)
     * python manage.py migrate --fake
+
+    * Log in into admin interface (http://.../admin/) and set proper domain name in the entry of Sites model
 
     * lighttpd or 'python manage.py runserver' for development purposes (with proper virtualenv)

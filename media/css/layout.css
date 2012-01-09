@@ -1,0 +1,10 @@
+/* import core styles */
+@import url(/media/yaml/core/base.css);
+
+/* import screen layout */
+@import url(/media/yaml/navigation/nav_shinybuttons.css);
+@import url(/media/css/basemod.css);
+/*@import url(/media/css/screen/content.css);*/
+
+/* import print layout */
+@import url(/media/yaml/print/print_draft.css);

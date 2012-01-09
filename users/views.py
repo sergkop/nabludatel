@@ -1,4 +1,5 @@
 from django.contrib import messages, auth
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import redirect, render_to_response
 from django.template import RequestContext
@@ -12,7 +13,7 @@ import users.signals
 
 def profile(request):
     if not request.user.is_authenticated():
-        return HttpResponseRedirect() # TODO: login page
+        return HttpResponseRedirect(reverse('main')) # TODO: redirect to login page
 
     user_map = UserMap.objects.get(user=request.user) # TODO: what if there are several user maps?
     data = json.loads(user_map.identity.data)
