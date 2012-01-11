@@ -22,6 +22,7 @@ Design:
     * Redesign yandex money block
     * Colors of the elements
     * Decrease menu elements size
+    * favicon
 
 Initialization:
     * Use 'python manage.py dumpdata/loaddata' and put db file in repository
@@ -41,6 +42,8 @@ Later:
     * Ability to generate a static version of the site (in case of DDOS)
     * Set proper response tags for caching e.g. last modified
     * Alternative authentication system - uLogin - http://habrahabr.ru/blogs/webdev/130893/
+    * Change password form
+    * Captcha
 
 Server:
     * Make backups/portability of db data to another server

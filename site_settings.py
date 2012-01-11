@@ -26,3 +26,9 @@ DATABASES = {
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'x0=i8fwh^4s@y=#$)vsjxhdc5qu=ajap3g(t*s)_+s67o81lww'
+
+VIRTUALENV = "/home/serg/data/nabludatel/env1/lib/python2.7/site-packages"
+
+# force removal of mysite.fcgi from URL:
+# http://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/#forcing-the-url-prefix-to-a-particular-value
+FORCE_SCRIPT_NAME = ''
