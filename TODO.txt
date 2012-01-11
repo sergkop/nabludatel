@@ -1,8 +1,8 @@
 Blog:
     * Zinnia should use the same media files (like jquery) as main system
-    * use django-blog-zinnia for blog-like functionality; rss feeds
-    * Comments with disqus or facebook/vkontakte
+    * rss feeds
     * Shorten the length of the post on the main page if it's too long
+    * Facebook comments (+add to README)
 
 Login:
     * registration/login system; setup loginza widget ID and API signature (after publishing)
@@ -11,9 +11,7 @@ Login:
     * Introduce email verification
     * система аутентификации и страница пользователя, можно ли совмещать разные типы логина?
       как насчет пароля для юзеров пришедших через loginza?
-    * удобный способ совместить логин форму с регистрационной (найти)
     * recover old users accounts
-    * регистрация без loginza
 
 Design:
     * Dropdown menus for some main menu items
@@ -26,63 +24,60 @@ Design:
 
 Initialization:
     * Use 'python manage.py dumpdata/loaddata' and put db file in repository
-    * Configure google custom search
-    * Configure comments
 
 Later:
+    * move content from the old site
     * Is it possible to use one instance of django-cms for two sites?
     * using urls with slashes; keep all the old paths of the site or put redirects
     * Use pinax
     * Problems with using static files (css uses '/media/..' urls explicitly)
     * sitemap.xml/robots.txt; index with google
-    * move content from the old site
     * Write fabric script for automatic deployment
-    * Use virtualenvwrapper?
+    * Captcha on registration form
     * Tests
     * Ability to generate a static version of the site (in case of DDOS)
     * Set proper response tags for caching e.g. last modified
     * Alternative authentication system - uLogin - http://habrahabr.ru/blogs/webdev/130893/
     * Change password form
-    * Captcha
+    * Use virtualenvwrapper?
 
 Server:
     * Make backups/portability of db data to another server
     * How to prevent DOS attacks?
     * Perform load testing. Use memcached and django-debug-toolbar to find bottlenecks
     * Install google analytics
-    * serve static files using nginx
+    * serve static files using nginx (?)
 
 
 * Forms to sign up as an observer; old data; managing and exporting data from system
-* How editors create content?
-* Explain about white blocks in text editor
-
-1) Доработать главную страницу
-    * paginator
-    * перенести код из entries_list в base.html
-    * общая часть - заголовок статьи - в entries_list и entry_detail
-2) как редакторы будут писать записи? права доступа (группы юзеров)
-3) как поддерживать версию данных бд, которую можно итеративно расширять?
+* How ?
+* Explain editors how to create content
 * ссылка на юзера (интегрировать посты в страницу юзера)
-* фиксировать набор статей, используемых в навигации)
+* фиксировать набор статей, используемых в навигации
+* Голосования (http://vkontakte.ru/developers.php?oid=-1&p=Poll)
+* как редакторы будут писать записи? права доступа (группы юзеров) - тестировать на юзерах
+* как поддерживать версию данных бд, которую можно итеративно расширять?
+* Configure google custom search (add to README)
+* результаты поиска сдвинуты вниз
 
 Сегодня:
-* поменять настройки layout (как в примере 07_layouts_advanced_2/fullpage_3col.html)
-* footnote
-* выложить версию на сервер
+* Доработать главную страницу
+    * поменять настройки layout (как в примере 07_layouts_advanced_2/fullpage_3col.html)
+    * footnote
+    * paginator
+        * перенести код из entries_list в base.html
+        * общая часть - заголовок статьи - в entries_list и entry_detail
+* Импорт записей блога
+* Родная регистрация
+* удобный способ совместить логин форму с регистрационной (найти)
 
 
 
-
-
-
-
-
-
-
-
-
-
+* merge templates
+* integrate loginza and solve main issues
+* write documentation on how to run django 
+* reimplement nabludatel.org templates
+* Письмо про контент
 
 
 

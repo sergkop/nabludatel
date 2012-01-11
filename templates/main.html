@@ -4,8 +4,5 @@
 {% load zinnia_tags %}
 
 {% block content %}
-    <div>"Гражданин наблюдатель" подвел первые итоги выборов 4 декабря</div>
-
     {% get_recent_entries 3 "zinnia/entries_list.html" %}
-
 {% endblock %}

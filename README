@@ -1,5 +1,5 @@
 Installation (for Ubuntu):
-    * sudo aptitude install python2.7 python-setuptools git python-imaging
+    * sudo aptitude install python2.7 python-setuptools git python-imaging lighttpd
     * sudo aptitude install python-psycopg2 / sudo aptitude install python-mysql
     * sudo easy_install pip
     * sudo pip install virtualenv
@@ -9,13 +9,28 @@ Installation (for Ubuntu):
     * git clone git://github.com/sergkop/nabludatel.git CODE_DIR
     * pip install -r CODE_DIR/requirements.txt
 
-    * edit settings.py
+    * переименовать site_settings.py.example в site_settings.py и настроить базу данных
     * make sure that propriate media directories (static/, media/) are writable
 
     * 'python manage.py syncdb --all' (agree to create superuser)
     * python manage.py migrate --fake
 
-    * Log in into admin interface (http://.../admin/) and set proper domain name in the entry of Sites model
-
-    * lighttpd or 'python manage.py runserver' for development purposes (with proper virtualenv) (it is important to run it
+    * For development purposes 'python manage.py runserver' inside proper virtualenv (it is important to run it
       from the directory containing manage.py)
+
+    * Configure lighttpd (example of lighttpd.conf is provided). Modify /etc/lighttpd/lighttpd.conf and
+      run 'sudo /etc/init.d/lighttpd restart'
+
+    * Log in into admin interface (/admin/) and set proper domain name in the entry of Sites model
+      (for loginza to work)
+
+    * Create account for VKontakte comments at the domain (http://vkontakte.ru/developers.php?p=Comments)
+      and set proper apiId in templates/zinnia/entry_detail.html
+
+Настройка:
+    * Создать группу editors с правами, достаточными для редактирования статей
+    * Добавить пользователей-редакторов в эту группу
+
+Как писать записи в блог:
+    * Зайти в интерфейс администрирования (/admin/). Zinnia -> Entries содержит список всех
+      записей и кнопки операций над ними
