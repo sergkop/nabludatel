@@ -10,7 +10,6 @@ def loginza_error_handler(sender, error, **kwargs):
 signals.error.connect(loginza_error_handler)
 
 def loginza_auth_handler(sender, user, identity, **kwargs):
-    print "auth_signal"
     try:
         # it's enough to have single identity verified to treat user as verified
         models.UserMap.objects.get(user=user, verified=True)
