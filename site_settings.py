@@ -32,3 +32,5 @@ VIRTUALENV = "/home/serg/data/nabludatel/env1/lib/python2.7/site-packages"
 # force removal of mysite.fcgi from URL:
 # http://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/#forcing-the-url-prefix-to-a-particular-value
 FORCE_SCRIPT_NAME = ''
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
