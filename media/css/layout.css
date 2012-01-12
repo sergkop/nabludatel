@@ -4,7 +4,7 @@
 /* import screen layout */
 @import url(/media/yaml/navigation/nav_shinybuttons.css);
 @import url(/media/css/basemod.css);
-/*@import url(/media/css/screen/content.css);*/
+@import url(/media/css/content.css);
 
 /* import print layout */
-@import url(/media/yaml/print/print_draft.css);
+@import url(/media/yaml/print/print_003_draft.css);

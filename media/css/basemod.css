@@ -11,42 +11,61 @@
 
   body { overflow-y: scroll; }
 
-  /*-------------------------------------------------------------------------*/
-
-
+  /*------------------------------------------------------------------------------------------------------*/
+  
+  /** Formatting YAML's  basic layout elements */
 
   /* Marginal areas & page background */
-  body { background: #4d87c7 url("images/bg_blue.gif") repeat-x top left fixed; padding: 0;}
+  body { background: #f9f9f9; }
 
-  /* Layout Alignment */
-  .page_margins { margin: 0 auto; }
+  /* Centering layout in old IE-versions */
+  body { text-align: center; }
+  .page_margins { text-align:left; margin: 0 auto; }
 
-  /* Layout Properties */
-  .page_margins { width: auto;  min-width: 740px; max-width: 90em; background: #fff; }
-  #header { position:relative; padding: 45px 2em 1em 20px; color: #000; background: #fff; }
-  #topnav { position:absolute; top:10px; right:10px; text-align:right; color: #aaa; background: transparent; }
-  #nav { overflow:hidden; }
-  #main { margin: 10px 0; background: #fff; }
-  #footer { padding: 10px 20px; color:#666; background: #f9f9f9; border-top: 5px #efefef solid; }
+  /* Layout: width, background, borders */
+  .page_margins { max-width: 80em; }
+  #header, #nav, #main, #footer { overflow:hidden; min-width: 720px; }
 
-  /* navigation: horizontal adjustment */
-  #nav ul { margin-left: 20px; }
+  /* Designing main layout elements */
+  #header {
+    color: #fff;
+    background: #4d87c7 url("/media/images/bg_blue.png") repeat-x top left;
+  }
+
+  #header .page { position:relative; padding: 15px 2em 2.5em 20px; }
+
+  #topnav { position:absolute; top: 10px; right: 10px; color: #88a; background: transparent; }
+
+  #nav { background: #e8e8e8; }
+
+  #main { background: #fff;padding:10px 0; }
+
+  #footer {
+    color:#666;
+    background: #f9f9f9;
+    border-top: 5px #efefef solid;
+  line-height: 1.5em;
+  }
+
+  #footer .page { padding: 10px 20px; }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * Formatting content container
+   *
+   * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col1   | #col3     | #col2   |
+   * | 25%     | flexible  | 25%     |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
 
 
-
-  /*-------------------------------------------------------------------------*/
-
-  /* Formatting content container */
-
-  /*#col1 { float: left; width: 300px;  margin:0 }
-  #col2 { float: right; width: 300px;  margin:0 }
-  #col3 { width: auto; margin: 0 300px 0 300px}
-  #col1_content { padding: 0 10px 0 20px }
-  #col2_content { padding: 0 20px 0 10px }
-  #col3_content { padding: 0 10px } */
-
-
-    #col1 { width: 25%; }
+  #col1 { width: 25%; }
   #col1_content { padding: 10px 10px 10px 20px; }
 
   #col2 { width: 25%; }
@@ -55,6 +74,23 @@
   #col3 { margin: 0 25%; }
   #col3_content { padding: 10px; }
 
-    
-  /*-------------------------------------------------------------------------*/
-}
+ /* Styling of layout specific elements */
+  #header h1 {
+    font-weight:bold;
+    font-size:2.5em;
+    letter-spacing:-2px;
+    line-height:65%;
+    color:#fff;
+  }
+
+  #header span { color:#88c; }
+
+  #topnav a { color: #ccc; font-weight: normal; background:transparent; text-decoration:none; }
+  #topnav a:focus,
+  #topnav a:hover,
+  #topnav a:active { text-decoration:underline; background-color: transparent; }
+
+  #footer a { color: #999; background:transparent; font-weight: bold; }
+  #footer a:focus,
+  #footer a:hover,
+  #footer a:active {color: #4D87C7; background-color: transparent; text-decoration:underline; }

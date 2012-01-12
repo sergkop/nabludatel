@@ -1,7 +1,8 @@
 {% load cms_tags sekizai_tags %}
-{% load menu_tags %}
 {% load loginza_widget %}
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
     <title>Гражданин Наблюдатель | {% page_attribute page_title %}</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -19,9 +20,11 @@
     <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?47"></script>
 </head>
 <body>
+
+<div id="header" role="banner">
     <div class="page_margins">
-        <div id="header">
-            <div id="topnav">
+        <div class="page">
+            <div id="topnav" role="contentinfo">
                 {% if user.is_authenticated %} 
                     <a href="{% url profile %}" class="header_link">{{ user }}</a> |
                     <a href="/users/logout/?next=%2F" class="header_link">Выйти?</a>
@@ -29,91 +32,102 @@
                     {% loginza_button providers_set="google,vkontakte,facebook,livejournal,yandex,mailru,rambler,twitter,odnoklassniki" %}
                 {% endif %}
             </div>
-
             <a href="/" id="logo"><img src="{{ MEDIA_URL }}images/logo.jpg" alt="Гражданин Наблюдатель"/></a>
             <h1><a href="/" id="title_link">Гражданин наблюдатель</a></h1>
-            <div style="margin-left: 260; font-size: 0.9em; color: #FFFFFF;">
-                Система постоянного общественного сопровождения процесса организации и проведения избирательных кампаний в государстве
-            </div>
-
+            <span style="margin-left: 260px; font-size: 1.1em; color: #FFFFFF; margin-top: 50px;">
+                Мы делаем выборы честными
+            </span>
         </div>
+    </div>
+</div>
 
-        <div id="nav">
-            <div class="hlist">
-                <ul>
-                    <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="/about/">О проекте</a></li>
-                    <li><a href="/">Рабочие группы</a></li>
-                    <li><a href="/">Проекты</a></li>
-                    <li><a href="/">Наши наблюдения</a></li>
-                    <li><a href="/results/">Итоги выборов</a></li>
-                    <li><a href="/library/">Библиотечка наблюдателя</a></li>
-                    <li><a href="https://forum.nabludatel.org/">Форум</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
+<!-- begin: main navigation #nav -->
+<div id="nav" role="navigation">
+  <div class="page_margins">
+    <div class="page">
+      <div class="hlist">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about/">О проекте</a></li>
+            <li><a href="/">Рабочие группы</a></li>
+            <li><a href="/">Проекты</a></li>
+            <li><a href="/">Наши наблюдения</a></li>
+            <li><a href="/results/">Итоги выборов</a></li>
+            <li><a href="/library/">Библиотечка наблюдателя</a></li>
+            <li><a href="https://forum.nabludatel.org/">Форум</a></li>
+            <li><a href="/contacts/">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end: main navigation -->
 
-        <div id="main">
-            <!-- The left column -->
-            <div id="col1">
+<!-- begin: main content area #main -->
+<div id="main">
+    <div class="page_margins">
+        <div class="page">
+            <!-- begin: #col1 - first float column -->
+            <div id="col1" role="complementary">
                 <div id="col1_content" class="clearfix">
-                    <h3 class="side_menu_header">Для наблюдателей</h3>
-                    <ul id="left_menu_ul">
-                        <li><a href="">Кто такой наблюдатель</a></li>
-                        <li><a href="">Что должен делать наблюдатель</a></li>
-                        <li><a href="">Зачем наблюдать за выборами</a></li>
-                        <li><a href="">Как стать наблюдателем</a></li>
-                        <li><a href="">Куда идут результаты</a></li>
-                        <li><a href="">Записаться в наблюдатели</a></li>
-                        <li><a href="/library/">Библиотечка наблюдателя</a></li>
-                    </ul>
+                    <div class="info">
+                        <h3 class="side_menu_header">Для наблюдателей</h3>
+                        <ul id="left_menu_ul">
+                            <li><a href="">Кто такой наблюдатель</a></li>
+                            <li><a href="">Что должен делать наблюдатель</a></li>
+                            <li><a href="">Зачем наблюдать за выборами</a></li>
+                            <li><a href="">Как стать наблюдателем</a></li>
+                            <li><a href="">Куда идут результаты</a></li>
+                            <li><a href="">Записаться в наблюдатели</a></li>
+                            <li><a href="/library/">Библиотечка наблюдателя</a></li>
+                        </ul>
 
 
-                    <div id="cse-search-form" style="width: 100%;">Loading</div>
-                    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                    <script type="text/javascript"> 
-                    google.load('search', '1', {language : 'ru'});
-                    google.setOnLoadCallback(function() {
-                        var customSearchControl = new google.search.CustomSearchControl(
-                        '007084942556480968662:efy46j0mxa8');
+                        <div id="cse-search-form" style="width: 100%;">Loading</div>
+                        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+                        <script type="text/javascript"> 
+                        google.load('search', '1', {language : 'ru'});
+                        google.setOnLoadCallback(function() {
+                            var customSearchControl = new google.search.CustomSearchControl(
+                            '007084942556480968662:efy46j0mxa8');
 
-                        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-                        var options = new google.search.DrawOptions();
-                        options.enableSearchboxOnly("http://127.0.0.1:8000/search_results");
-                        customSearchControl.draw('cse-search-form', options);
-                    }, true);
-                    </script>
-                    <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+                            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                            var options = new google.search.DrawOptions();
+                            options.enableSearchboxOnly("http://127.0.0.1:8000/search_results");
+                            customSearchControl.draw('cse-search-form', options);
+                        }, true);
+                        </script>
+                        <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
 
-                    <h3 class="side_menu_header">Наши друзья</h3>
- 
-                    <div style="text-align: center;">
-                        <a href="http://nabludatel_org.livejournal.com">
-                            <img width="204" border="5" height="50" alt="Гражданин наблюдатель в Живом Журнале"
-                                title="ЖЖ Гражданин наблюдатель" src="http://pics.livejournal.com/djatel_2008/pic/0000e6ds">
-                        </a>
+                        <h3 class="side_menu_header">Наши друзья</h3>
+    
+                        <div style="text-align: center;">
+                            <a href="http://nabludatel_org.livejournal.com">
+                                <img width="204" border="5" height="50" alt="Гражданин наблюдатель в Живом Журнале"
+                                    title="ЖЖ Гражданин наблюдатель" src="http://pics.livejournal.com/djatel_2008/pic/0000e6ds">
+                            </a>
 
-                        <a href="http://www.kartanarusheniy.ru/">
-                            <img width="180" border="0" height="300" alt="КАРТА НАРУШЕНИЙ НА ВЫБОРАХ"
-                            title="Карта нарушений на выборах. Совместный проект ¨Газеты.Ru¨ и Ассоциации ¨Голос¨ "
-                            src="http://files.kartanarusheniy.ru/adv/240-400.gif">
-                        </a>
+                            <a href="http://www.kartanarusheniy.ru/">
+                                <img width="180" border="0" height="300" alt="КАРТА НАРУШЕНИЙ НА ВЫБОРАХ"
+                                title="Карта нарушений на выборах. Совместный проект ¨Газеты.Ru¨ и Ассоциации ¨Голос¨ "
+                                src="http://files.kartanarusheniy.ru/adv/240-400.gif">
+                            </a>
 
-                        <a href="http://www.golos.org">
-                            <img width="200" border="0" height="200" alt="Ассоциация ¨Голос¨" title="Ассоциация ¨Голос¨"
-                                src="http://a3.sphotos.ak.fbcdn.net/hphotos-ak-ash2/150348_168941373137020_168939573137200_387318_8024140_n.jpg">
-                        </a>
+                            <a href="http://www.golos.org">
+                                <img width="200" border="0" height="200" alt="Ассоциация ¨Голос¨" title="Ассоциация ¨Голос¨"
+                                    src="http://a3.sphotos.ak.fbcdn.net/hphotos-ak-ash2/150348_168941373137020_168939573137200_387318_8024140_n.jpg">
+                            </a>
 
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- end: #col1 -->
 
-            <!-- The right column -->
-            <div id="col2">
+            <!-- begin: #col2 second float column -->
+            <div id="col2" role="complementary">
                 <div id="col2_content" class="clearfix">
-
                     <h3 class="side_menu_header">Сбор средств</h3>
                     <!-- Виджет сбора пожертвований -->
                     <form method="post" action="https://money.yandex.ru/charity.xml" style="margin: 0; padding: 0;">
@@ -149,9 +163,7 @@
                             </td></tr>
                         </table>
                     </form>
-                
-                
-                
+
                     <div>
                         <h3 class="side_menu_header">Информация о итогах</h3>
                         Данные по протоколам наших наблюдателей
@@ -176,19 +188,31 @@
                     </div>
                 </div>
             </div>
+            <!-- end: #col2 -->
 
-            <!-- The middle column -->
-            <div id="col3">
+            <!-- begin: #col3 static column -->
+            <div id="col3" role="main">
                 <div id="col3_content" class="clearfix">
-                    <!--{% show_breadcrumb %}-->
                     {% block content %}{% endblock %}
                 </div>
-                <!-- IE Column Clearing -->
-                <div id="ie_clearing"> &#160; </div>
+                <div id="ie_clearing">&nbsp;</div>
+                <!-- End: IE Column Clearing -->
             </div>
+            <!-- end: #col3 -->
         </div>
-
     </div>
+</div>
+<!-- end: #main -->
+
+<!-- begin: #footer -->
+<div id="footer" role="contentinfo">
+  <div class="page_margins">
+    <div class="page">
+      Footer with copyright notice and status information<br />Layout based on <a href="http://www.yaml.de/">YAML</a>
+    </div>
+  </div>
+</div>
+
 
     {% render_block "js" %}
     <script type="text/javascript" src="{{ MEDIA_URL }}libs/jquery/jquery.js"></script>

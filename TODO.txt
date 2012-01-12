@@ -49,8 +49,7 @@ Server:
     * serve static files using nginx (?)
 
 
-* Forms to sign up as an observer; old data; managing and exporting data from system
-* How ?
+
 * Explain editors how to create content
 * ссылка на юзера (интегрировать посты в страницу юзера)
 * фиксировать набор статей, используемых в навигации
@@ -59,6 +58,7 @@ Server:
 * как поддерживать версию данных бд, которую можно итеративно расширять?
 * Configure google custom search (add to README)
 * результаты поиска сдвинуты вниз
+* Группировка выдачи блога по категориям
 
 Сегодня:
 * Доработать главную страницу
@@ -67,18 +67,19 @@ Server:
     * paginator
         * перенести код из entries_list в base.html
         * общая часть - заголовок статьи - в entries_list и entry_detail
+
 * Импорт записей блога
 * Родная регистрация
 * удобный способ совместить логин форму с регистрационной (найти)
 
 
-
 * merge templates
 * integrate loginza and solve main issues
 * write documentation on how to run django 
-* reimplement nabludatel.org templates
-* Письмо про контент
-
+* Forms to sign up as an observer; old data; managing and exporting data from system
+* learn to send emails
+* выкачивание данных об уиках
+  http://www.vybory.izbirkom.ru/region/izbirkom?action=show&root_a=1000087&vrn=100100028713299&region=0&global=true&type=0&sub_region=0&prver=0&pronetvd=null
 
 
 
