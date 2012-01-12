@@ -22,6 +22,7 @@ Design:
     * Redesign yandex money block
     * Colors of the elements
     * Decrease menu elements size
+    * favicon
 
 Initialization:
     * Use 'python manage.py dumpdata/loaddata' and put db file in repository
@@ -58,6 +59,8 @@ Server:
     * paginator
     * перенести код из entries_list в base.html
     * общая часть - заголовок статьи - в entries_list и entry_detail
+    * перебросить livejournal направо
+    * инфо об итогах справа убрать
 2) как редакторы будут писать записи? права доступа (группы юзеров)
 3) как поддерживать версию данных бд, которую можно итеративно расширять?
 * ссылка на юзера (интегрировать посты в страницу юзера)
@@ -67,7 +70,6 @@ Server:
 * поменять настройки layout (как в примере 07_layouts_advanced_2/fullpage_3col.html)
 * footnote
 * выложить версию на сервер
-
 
 
 
