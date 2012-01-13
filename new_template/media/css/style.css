@@ -1,0 +1,310 @@
+/* ----------------------- Custom styles ------------------------------*/
+
+/* Header */
+/*#header {background-color: #2C5F70; width: 100%; margin: 0; padding: 0; height: 80px;}
+#header h1 {margin: 0;}*/
+#logo { position: absolute;}
+
+#title_link {
+    color: #183248;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, sans-serif;
+    font-size: 23px;
+    font-weight: normal;
+    text-decoration: none;
+    margin-left: 285px;
+    line-height: 42px;
+}
+
+#title_link:visited { color: #FFFFFF; }
+
+.header_link {font-weight: bold; color: #FFFFFF;}
+
+#left_menu_ul {list-style-type: none; margin-left: 0;}
+.side_menu_header {
+    padding: 10px 10px 10px 14px;
+    background: #ddd;
+    border-radius: 10px 0 0;
+    -moz-border-radius: 10px 0 0;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, sans-serif;
+    font-size: 100.1%;
+    margin: 10px 0 0 ;
+    /*color: #183248;*/
+    color: #000;
+}
+
+.side_menu_header.attention {
+    background: #aa5555;
+    color: #fff;
+}
+
+.side_section {
+    clear: both;
+    padding: 20px 0 30px 14px;
+    line-height: 1.5em;
+}
+
+.ya_account_number {
+    padding: 10px 0;
+}
+
+.ya_logo {
+    display: block;
+    padding: 10px 0;
+}
+
+.link_banner {
+    display: block;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+
+.link_banner img {
+    width: 100px;
+}
+
+
+/* ---------------Google Custom Search widget--------------------------- */
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+input.gsc-input {
+border-color: #BCCDF0;
+}
+input.gsc-search-button {
+border-color: #666666;
+background-color: #CECECE;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-top-color: #FF9900;
+border-left-color: #E9E9E9;
+border-right-color: #E9E9E9;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #0000CC;
+}
+.gsc-cursor-page {
+color: #0000CC;
+}
+a.gsc-trailing-more-results:link {
+color: #0000CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #000000;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gs-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right *  {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+
+/* -------------------Zinnia settings------------------------- */
+.hentry {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2em;
+    margin-top: 9px;
+}
+.featured h2.entry-title a:visited, .featured h2.entry-title a:link {
+    color: #DD5800;
+}
+.featured h2.entry-title a:hover {
+    color: #FF7011;
+}
+.featured h2.entry-title a:active {
+    color: #9000DD;
+}
+h2.entry-title {
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1.5em;
+    text-shadow: 1px 1px 0 #CCCCCC;
+}
+p.entry-info {
+    background: url("../img/category.png") no-repeat scroll 0.5em 50% transparent;
+    color: #666666;
+}
+.entry-body {
+    font-size: 1.2em;
+    padding-right: 0.5em;
+    text-align: justify;
+}
+.entry-body img, .entry-body img.left {
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+}
+.entry-body img.right {
+    float: right;
+    margin: 0 0 1.5em 1.5em;
+}
+.entry-body li {
+    list-style-image: none;
+}
+.entry-body pre, .entry-body blockquote {
+    background-color: #E9E9F3;
+    clear: none;
+    float: none;
+    overflow: auto;
+    padding: 1em;
+    width: auto;
+}
+.entry-body blockquote {
+    border: 1px dashed #A7A7CF;
+}
+.entry-body blockquote p {
+    margin: 0;
+}
+.entry-body pre {
+    border-bottom: 1px solid #A7A7CF;
+    border-top: 1px solid #A7A7CF;
+    line-height: 110%;
+}
+.continue-reading {
+    clear: both;
+}
+.continue-reading a:after {
+    content: "⇒";
+}
+.entry-footer p {
+    margin: 0;
+}
+.entry-tags strong {
+    background: url("../zinnia/img/tags.png") no-repeat scroll 0 0 transparent;
+    padding-left: 1.5em;
+}
+.entry-comments strong {
+    background: url("../zinnia/img/comments.png") no-repeat scroll 0 0 transparent;
+    padding-left: 1.5em;
+}
+
+/* ------------------HTML5 boilerplate ---------------------*/
+/*html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0);
+ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } 
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }*/
+
+/* Improve image quality when scaled in IE7
+ * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+img {
+    border: 0;
+    display: block;
+    -ms-interpolation-mode: bicubic;
+}
+
+label { cursor: pointer; }
+
+/* 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers */
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/* 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7 */
+button, input { line-height: normal; *overflow: visible; }
+
+/* 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS */
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/* Consistent box sizing and appearance */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+/* Remove inner padding and border in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
