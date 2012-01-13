@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     'cms.plugins.picture',
     'cms.plugins.text',
     'cms.plugins.twitter',
+    'tinymce',
 
     'filer',
     #'easy_thumbnails',
@@ -169,3 +170,8 @@ LOGGING = {
 LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
 
 #ZINNIA_ENTRY_BASE_MODEL = 'zinnia.plugins.placeholder.EntryPlaceholder'
+
+TINYMCE_JS_URL = MEDIA_URL + 'libs/tiny_mce/tiny_mce.js'
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'libs/tiny_mce')
+TINYMCE_DEFAULT_CONFIG = {'theme': "simple", 'relative_urls': False, 'width': 640, 'height': 400}
+TINYMCE_COMPRESSOR = True

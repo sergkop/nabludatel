@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^', include('navigation.urls')),
     url(r'^loginza/', include('loginza.urls')),
     url(r'^users/', include('users.urls')),
+    (r'^tinymce/', include('tinymce.urls')),
 
     # Zinnia blog engine
     #url(r'^', include('zinnia.urls.capabilities')),
