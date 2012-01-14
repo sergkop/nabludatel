@@ -12,8 +12,8 @@ urlpatterns = patterns('',
     #(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
     url(r'^', include('navigation.urls')),
-    url(r'^loginza/', include('loginza.urls')),
-    url(r'^users/', include('users.urls')),
+    #url(r'^loginza/', include('loginza.urls')),
+    #url(r'^users/', include('users.urls')),
     (r'^tinymce/', include('tinymce.urls')),
 
     # Zinnia blog engine
@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     #url(r'^sitemap/', include('zinnia.urls.sitemap')),
     #url(r'^trackback/', include('zinnia.urls.trackback')),
     url(r'^weblog/', include('zinnia.urls')),
-    url(r'^comments/', include('django.contrib.comments.urls')),
+    #url(r'^comments/', include('django.contrib.comments.urls')),
 
     url(r'^', include('cms.urls')),
 )

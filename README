@@ -1,5 +1,5 @@
 Installation (for Ubuntu):
-    * sudo aptitude install python2.7 python-setuptools git python-imaging lighttpd postfix
+    * sudo aptitude install python2.7 python-setuptools git python-imaging lighttpd postfix python-gd
     * sudo aptitude install python-psycopg2 / sudo aptitude install python-mysql
     * sudo easy_install pip
     * sudo pip install virtualenv

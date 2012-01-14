@@ -21,10 +21,6 @@ def profile(request):
     context = {
         'user_data': data,
     }
-    #from django.core.mail import send_mail
-    #send_mail('Subject here', 'Here is the message.', 'sergkop@gmail.com',
-    #        ['mikpanko@gmail.com'], fail_silently=False)
-
     return render_to_response('users/profile.html', context_instance=RequestContext(request, context))
 
 # TODO: what if user has previously logged in with another social network account

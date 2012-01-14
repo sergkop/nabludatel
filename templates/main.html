@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
-{% load loginza_widget %}
+{% load cms_tags %}
 {% load zinnia_tags %}
 
 {% block content %}
+    {% show_placeholder "template_1_content" "main" %}
+
     {% get_recent_entries 3 "zinnia/entries_list.html" %}
 {% endblock %}

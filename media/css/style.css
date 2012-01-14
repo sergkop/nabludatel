@@ -5,14 +5,62 @@
 #header h1 {margin: 0;}*/
 #logo { position: absolute;}
 
-#title_link {color: #FFFFFF; text-decoration: none; margin-left: 260px;}
-#title_link:visited { color: #FFFFFF; }
+#title_link {
+    color: #183248;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, sans-serif;
+    font-size: 23px;
+    font-weight: normal;
+    text-decoration: none;
+    margin-left: 285px;
+    line-height: 42px;
+}
+
+#title_link:visited { color: #183248; }
 
 .header_link {font-weight: bold; color: #FFFFFF;}
 
 #left_menu_ul {list-style-type: none; margin-left: 0;}
-.side_menu_header {padding: 0px; background-color: #5A6694; text-align: center; margin:0px; color: white;}
+.side_menu_header {
+    padding: 10px 10px 10px 14px;
+    background: #ddd;
+    border-radius: 10px 0 0;
+    -moz-border-radius: 10px 0 0;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, sans-serif;
+    font-size: 100.1%;
+    margin: 10px 0 0 ;
+    /*color: #183248;*/
+    color: #000;
+}
 
+.side_menu_header.attention {
+    background: #aa5555;
+    color: #fff;
+}
+
+.side_section {
+    clear: both;
+    padding: 20px 0 30px 14px;
+    line-height: 1.5em;
+}
+
+.ya_account_number {
+    padding: 10px 0;
+}
+
+.ya_logo {
+    display: block;
+    padding: 10px 0;
+}
+
+.link_banner {
+    display: block;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+
+.link_banner img {
+    width: 100px;
+}
 
 
 /* ---------------Google Custom Search widget--------------------------- */
@@ -148,7 +196,9 @@ color: #008000;
 
 /* -------------------Zinnia settings------------------------- */
 .hentry {
-    margin-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2em;
+    margin-top: 9px;
 }
 .featured h2.entry-title a:visited, .featured h2.entry-title a:link {
     color: #DD5800;
@@ -160,15 +210,14 @@ color: #008000;
     color: #9000DD;
 }
 h2.entry-title {
-    border-bottom: 1px solid #EEEEEE;
     font-weight: bold;
     margin-bottom: 0;
+    line-height: 1.5em;
     text-shadow: 1px 1px 0 #CCCCCC;
 }
 p.entry-info {
     background: url("../img/category.png") no-repeat scroll 0.5em 50% transparent;
     color: #666666;
-    padding-left: 2em;
 }
 .entry-body {
     font-size: 1.2em;
@@ -215,11 +264,11 @@ p.entry-info {
     margin: 0;
 }
 .entry-tags strong {
-    background: url("/media/zinnia/img/tags.png") no-repeat scroll 0 0 transparent;
+    background: url("../zinnia/img/tags.png") no-repeat scroll 0 0 transparent;
     padding-left: 1.5em;
 }
 .entry-comments strong {
-    background: url("/media/zinnia/img/comments.png") no-repeat scroll 0 0 transparent;
+    background: url("../zinnia/img/comments.png") no-repeat scroll 0 0 transparent;
     padding-left: 1.5em;
 }
 
@@ -231,7 +280,11 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }*
 
 /* Improve image quality when scaled in IE7
  * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
-img { border: 0; -ms-interpolation-mode: bicubic; }
+img {
+    border: 0;
+    display: block;
+    -ms-interpolation-mode: bicubic;
+}
 
 label { cursor: pointer; }
 

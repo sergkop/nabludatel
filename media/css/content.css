@@ -52,7 +52,7 @@
   /*--- Headings | Überschriften ------------------------------------------------------------------------*/
 
   h1,h2,h3,h4,h5,h6 {
-    font-family:"Times New Roman", Times, serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, sans-serif;
     font-weight:normal;
     color:#222;
     margin:0 0 0.25em 0;
@@ -74,7 +74,7 @@
   ol { list-style-type:decimal; }
   ol ol { list-style-type:lower-latin; margin-bottom:0; }
 
-  li { margin-left:0.8em; line-height:1.5em; }
+  li { margin-left: 0; line-height: 1.5em; padding: 5px 0;}
 
   dt { font-weight:bold; }
   dd { margin:0 0 1em 0.8em; }
@@ -122,14 +122,15 @@
 
   /*--- Links ----------------------------------------------------------------------------------------- */
 
-  a { color:#4D87C7; background:transparent; text-decoration:none; }
-  a:visited  { color:#036; }
+  /*a { color:#3f5469; background:transparent; }*/
+  a { color:#4D87C7; background:transparent; }
+  /*a:visited  { color:#036; }*/
 
   /* (en) maximum constrast for tab focus - change with great care */
   /* (en) Maximaler Kontrast für Tab Focus - Ändern Sie diese Regel mit Bedacht */
   a:focus { text-decoration:underline; color:#000; background: #fff; outline: 3px #f93 solid; }
   a:hover,
-  a:active { color:#182E7A; text-decoration:underline; outline: 0 none; }
+  a:active { color:#3f5469; text-decoration:underline; outline: 0 none; }
 
   /* --- images (with optional captions) | Bilder (mit optionaler Bildunterschrift) ------------------ */
 
@@ -156,7 +157,7 @@
   .highlight { color:#c30; }
   .dimmed { color:#888; }
 
-  .info { background:#f8f8f8; color:#666; padding:10px; margin-bottom:0.5em; font-size:91.7%; }
+  .info { color:#666; padding:10px 10px 10px 0; margin-bottom:0.5em; font-size:91.7%; }
 
   .note { background:#efe; color:#040; border:2px #484 solid; padding:10px; margin-bottom:1em; }
   .important { background:#ffe; color:#440; border:2px #884 solid; padding:10px; margin-bottom:1em; }
@@ -177,22 +178,17 @@
   * @section content-tables
   */
 
-  table { width:auto; border-collapse:collapse; margin-bottom:0.5em; border-top:2px #888 solid; border-bottom:2px #888 solid; }
+  table { width:auto; border-collapse:collapse; margin-bottom:0.5em; }
   table caption { font-variant:small-caps; }
   table.full { width:100%; }
   table.fixed { table-layout:fixed; }
 
   th,td { padding:0.5em; }
-  thead th { color:#000; border-bottom:2px #800 solid; }
+  thead th { color:#000; }
   tbody th { background:#e0e0e0; color:#333; }
   tbody th[scope="row"], tbody th.sub { background:#f0f0f0; }
 
-  tbody th { border-bottom:1px solid #fff; text-align:left; }
-  tbody td { border-bottom:1px solid #eee; }
-
-  tbody tr:hover th[scope="row"],
-  tbody tr:hover tbody th.sub { background:#f0e8e8; }
-  tbody tr:hover td { background:#fff8f8; }
+  tbody th { text-align:left; }
 
  /**
   * ------------------------------------------------------------------------------------------------- #

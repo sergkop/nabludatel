@@ -6,7 +6,6 @@ django-cms>=2.2
 django-reversion==1.4
 django-filer
 cmsplugin-filer
-django-cms-search
 django-loginza
 flup
 django-tagging>=0.3.1

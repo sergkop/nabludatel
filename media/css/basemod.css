@@ -1,96 +1,163 @@
 @media screen, projection
 {
-  /** 
-   * (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera 
-   *
-   * @workaround
-   * @affected IE8, FF, Webkit, Opera
-   * @css-for all
-   * @valid CSS3
-   */
+/** 
+* (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera 
+*
+* @workaround
+* @affected IE8, FF, Webkit, Opera
+* @css-for all
+* @valid CSS3
+*/
 
-  body { overflow-y: scroll; }
+body {
+    overflow-y: scroll;
+}
 
-  /*------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
   
-  /** Formatting YAML's  basic layout elements */
+/** Formatting YAML's  basic layout elements */
 
-  /* Marginal areas & page background */
-  body { background: #f9f9f9; }
+/* Marginal areas & page background */
+body {
+    background: #f9f9f9;
+}
 
-  /* Centering layout in old IE-versions */
-  body { text-align: center; }
-  .page_margins { text-align:left; margin: 0 auto; }
+/* Centering layout in old IE-versions */
+body {
+    text-align: center;
+}
+.page_margins {
+    text-align:left;
+	margin: 0 auto;
+}
 
-  /* Layout: width, background, borders */
-  .page_margins { max-width: 80em; }
-  #header, #nav, #main, #footer { overflow:hidden; min-width: 720px; }
+/* Layout: width, background, borders */
+.page_margins {
+    width: 95%;
+    max-width: 1200px;
+}
+#header, #nav, #main, #footer {
+    overflow:hidden;
+	min-width: 720px;
+}
 
-  /* Designing main layout elements */
-  #header {
+/* Designing main layout elements */
+#header {
     color: #fff;
-    background: #4d87c7 url("/media/images/bg_blue.png") repeat-x top left;
-  }
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#3f5469), to(#183248));
+    background: -moz-linear-gradient(top, #3f5469, #183248);*/
+    background: #fff;
+}
 
-  #header .page { position:relative; padding: 15px 2em 2.5em 20px; }
+#header .page {
+    position:relative;
+	padding: 25px 12px 50px;
+}
 
-  #topnav { position:absolute; top: 10px; right: 10px; color: #88a; background: transparent; }
+#topnav {
+    position:absolute;
+	top: 5px;
+	right: 0;
+	color: #88a;
+	background: transparent;
+}
 
-  #nav { background: #e8e8e8; }
+#nav {
+    background: #183248;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #666;
+    -moz-box-shadow: 0 0 7px #333;
+    -webkit-box-shadow: 0 0 7px #333;
+    box-shadow: 0 0 7px #333;
+}
 
-  #main { background: #fff;padding:10px 0; }
+#main {
+    background: #f5f5f5 ;padding:10px 0;
+}
 
-  #footer {
+#footer {
     color:#666;
     background: #f9f9f9;
     border-top: 5px #efefef solid;
-  line-height: 1.5em;
-  }
+    line-height: 1.5em;
+}
 
-  #footer .page { padding: 10px 20px; }
+#footer .page {
+    padding: 10px 20px;
+}
 
-  /*------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
 
-  /**
-   * Formatting content container
-   *
-   * |-------------------------------|
-   * | #header                       |
-   * |-------------------------------|
-   * | #col1   | #col3     | #col2   |
-   * | 25%     | flexible  | 25%     |
-   * |-------------------------------|
-   * | #footer                       |
-   * |-------------------------------|
-   */
+/**
+* Formatting content container
+*
+* |-------------------------------|
+* | #header                       |
+* |-------------------------------|
+* | #col1   | #col3     | #col2   |
+* | 25%     | flexible  | 25%     |
+* |-------------------------------|
+* | #footer                       |
+* |-------------------------------|
+*/
 
 
-  #col1 { width: 25%; }
-  #col1_content { padding: 10px 10px 10px 20px; }
+#col1 {
+    width: 25%;
+}
+#col1_content {
+    padding: 10px 10px 10px 12px;
+}
 
-  #col2 { width: 25%; }
-  #col2_content { padding: 10px 20px 10px 10px; }
+#col2 {
+    width: 25%;
+}
+#col2_content {
+    padding: 10px 20px 10px 10px;
+}
 
-  #col3 { margin: 0 25%; }
-  #col3_content { padding: 10px; }
+#col3 {
+    margin: 0 25%;
+}
+#col3_content {
+    padding: 10px 20px;
+}
 
- /* Styling of layout specific elements */
-  #header h1 {
+/* Styling of layout specific elements */
+#header h1 {
     font-weight:bold;
     font-size:2.5em;
     letter-spacing:-2px;
     line-height:65%;
     color:#fff;
-  }
+}
 
-  #header span { color:#88c; }
+#header span {
+    color:#88c;
+}
 
-  #topnav a { color: #ccc; font-weight: normal; background:transparent; text-decoration:none; }
-  #topnav a:focus,
-  #topnav a:hover,
-  #topnav a:active { text-decoration:underline; background-color: transparent; }
+#topnav a {
+    color: #4D87C7;
+	font-weight: normal;
+	background:transparent;
+    text-decoration:underline;
+}
+#topnav a:focus,
+#topnav a:hover,
+#topnav a:active {
+    text-decoration:underline;
+	background-color: transparent;
+}
 
-  #footer a { color: #999; background:transparent; font-weight: bold; }
-  #footer a:focus,
-  #footer a:hover,
-  #footer a:active {color: #4D87C7; background-color: transparent; text-decoration:underline; }
+#footer a {
+    color: #999;
+	background:transparent;
+	font-weight: bold;
+}
+#footer a:focus,
+#footer a:hover,
+#footer a:active {
+    color: #4D87C7;
+	background-color: transparent;
+	text-decoration:underline;
+}

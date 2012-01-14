@@ -72,7 +72,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'loginza.authentication.LoginzaBackend',
+    #'loginza.authentication.LoginzaBackend',
 )
 
 ROOT_URLCONF = 'urls'
@@ -82,7 +82,7 @@ TEMPLATE_DIRS = (
 )
 
 CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
+    ('template_1.html', 'Static page'),
 )
 
 LANGUAGES = [
@@ -128,10 +128,9 @@ INSTALLED_APPS = (
     'cmsplugin_filer_video',
 
     'reversion',
-    #'cms_search',
 
-    'loginza',
-    'users',
+    #'loginza',
+    #'users',
 
     'tagging',
     'zinnia',
@@ -164,12 +163,9 @@ LOGGING = {
 
 # Loginza settings
 #LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,mailru,twitter,rambler,odnoklassniki'
-#google, yandex, mailruapi, mailru, vkontakte, facebook, twitter, loginza, myopenid, webmoney, rambler, flickr, lastfm, verisign, aol, steam, openid.
 
 # !!!! can't use reverse url resolver here (raises ImportError), so we should carefully control paths
-LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
-
-#ZINNIA_ENTRY_BASE_MODEL = 'zinnia.plugins.placeholder.EntryPlaceholder'
+#LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
 
 TINYMCE_JS_URL = MEDIA_URL + 'libs/tiny_mce/tiny_mce.js'
 TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'libs/tiny_mce')
