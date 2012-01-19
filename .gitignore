@@ -4,3 +4,4 @@ database.sqlite
 site_settings.py
 *.kate-swp
 db.json
+media/uploads/*

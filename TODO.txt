@@ -1,19 +1,22 @@
 Immediate:
+    * redirects from old pages
+    * Forms to sign up as an observer; old data; managing and exporting data from system
+    
     * Доработать главную страницу
         * paginator
         * перенести код из entries_list в base.html
         * общая часть - заголовок статьи - в entries_list и entry_detail
         * Сокращать длину записей блога в ленте + отдельная страница под новости
         * ссылка на юзера - убрать
+        * сделать яндекс деньги покрасивее
+        * увеличить шрифт в меню
 
         * результаты поиска сдвинуты вниз
         * видео на главную страницу
         * сделать набросок редактируемой главной страницы
         * Помочь проекту и стать наблюдетелем (жирные в меню+главная страница)
-        * сделать страницу редактируемой
+        * Убрать оранжевую границу вокруг активных ссылок
 
-    * fix paths in css and html
-    * Forms to sign up as an observer; old data; managing and exporting data from system
     * запретить различные ненужные url из zinnia
 
     * install python-gd to allow image uploads
@@ -23,18 +26,16 @@ Immediate:
     * move content from the old site, импорт записей блога (Алена)
     * разместить у себя баннер - вид помощи
     * footnote
-    * Redesign yandex money block
 
-Pre-launch:
-    * sitemap.xml/robots.txt; index with google
-    * Set proper response tags for caching e.g. last modified
-    * redirects from old pages
+    * sitemap.xml/robots.txt
+    * Redesign yandex money block
     * PageSpeed optimization
+    * fix paths in css and html
     * Zinnia should use the same media files (like jquery) as main system
-    * Shorten the length of the post on the main page if it's too long
-    * Вставить код яндекс директ (Николай)
-    * debug=False
     * Use 'python manage.py dumpdata/loaddata' and put db file in repository (README)
+    * debug=False
+    * Set proper response tags for caching e.g. last modified
+    * Use postgres
 
 Right after launch (after moving to proper domain already):
     * Install yandex метрика

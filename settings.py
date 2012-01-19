@@ -169,5 +169,6 @@ LOGGING = {
 
 TINYMCE_JS_URL = MEDIA_URL + 'libs/tiny_mce/tiny_mce.js'
 TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'libs/tiny_mce')
-TINYMCE_DEFAULT_CONFIG = {'theme': "simple", 'relative_urls': False, 'width': 640, 'height': 400}
+TINYMCE_DEFAULT_CONFIG = {'theme': "advanced", 'relative_urls': False, 'width': 640, 'height': 400,
+    'theme_advanced_buttons3': ",fontselect,fontsizeselect,forecolor,backcolor,|,sub,sup,|,charmap,",}
 TINYMCE_COMPRESSOR = True
