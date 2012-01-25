@@ -34,3 +34,12 @@ Installation (for Ubuntu):
 Как писать записи в блог:
     * Зайти в интерфейс администрирования (/admin/). Zinnia -> Entries содержит список всех
       записей и кнопки операций над ними
+
+Чтобы вставлять видео к текст страниц:
+    В файле cms/utils/html.py заменить
+        DEFAULT_PARSER = html5lib.HTMLParser(tokenizer=sanitizer.HTMLSanitizer)
+    на
+        DEFAULT_PARSER = html5lib.HTMLParser()
+
+    Закомментировать строку 77 в файле cms/templates/admin/cms/page/plugin_change_form.html
+         {% block top %}{% if preview %}{% render_plugin plugin %}{% endif %}{% endblock %}
