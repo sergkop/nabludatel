@@ -3,6 +3,14 @@
 {% load cms_tags %}
 {% load zinnia_tags %}
 
+{% block side_block %}
+    <!--   FAQ btn -->
+    <div class="side_section">
+        <a href="/chto-dolzhen-delat-nablyudatel/" title="Часто задаваемые Вопросы"><img src="{{ MEDIA_URL }}images/faq.jpg" width="230" height="47" /></a>
+    </div>
+{% endblock %}
+
+
 {% block content %}
 
     <a href="{% url signup %}" id="banner">
