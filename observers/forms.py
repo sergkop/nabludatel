@@ -5,7 +5,7 @@ from captcha.fields import CaptchaField
 from observers.models import Observer
 
 class ObserverSignupForm(ModelForm):
-    captcha = CaptchaField()
+    #captcha = CaptchaField()
 
     class Meta:
         model = Observer

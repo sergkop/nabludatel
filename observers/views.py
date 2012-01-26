@@ -9,8 +9,8 @@ def signup(request):
         form = ObserverSignupForm(request.POST)
 
         if form.is_valid():
-            
-            return HttpResponseRedirect('/thank_you/')
+            form.save()
+            return HttpResponseRedirect('/spasibo/')
     else:
         form = ObserverSignupForm()
 

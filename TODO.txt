@@ -1,13 +1,8 @@
 Immediate:
     * Forms to sign up as an observer
-
     * Configure postgres
-
-    * Перенести последние блог посты
     * redirects from old pages
-    * add captcha
     * use django static files for compression
-    * посылать email когда пользователь регистрируется
 
 --------------------------------------------
 
@@ -19,6 +14,9 @@ Immediate:
     * PageSpeed optimization
     * удлинить поле поиска
     * Dropdown menus for some main menu items
+    * Перенести последние блог посты
+    * add captcha
+    * посылать email когда пользователь регистрируется
 
 Right after launch (after moving to proper domain already):
     * Install yandex метрика

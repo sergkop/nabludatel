@@ -9,15 +9,15 @@
         {% csrf_token %}
         <tr>
             <th><label for="id_full_name">Как вас зовут (ФИО): <span class="red">*</span></label></th>
-            <td><input id="id_full_name" type="text" name="full_name" maxlength="200" /></td>
+            <td>{{ form.full_name }}</td>
         </tr>
         <tr>
             <th><label for="id_telephone">Ваш контактный телефон: <span class="red">*</span></label></th>
-            <td><input id="id_telephone" type="text" name="telephone" maxlength="30" /></td>
+            <td>{{ form.telephone }}</td>
         </tr>
         <tr>
             <th><label for="id_location">Место жительства: <span class="red">*</span></label></th>
-            <td><input id="id_location" type="text" name="location" maxlength="100" /></td>
+            <td>{{ form.location }}</td>
         </tr>
         <tr>
             <th><label for="id_in_moscow">В Москве: <span class="red">*</span></label></th>
@@ -25,19 +25,16 @@
         </tr>
         <tr>
             <th><label for="id_email">Ваш адрес электронной почты: <span class="red">*</span></label></th>
-            <td><input id="id_email" type="text" name="email" maxlength="50" /></td>
+            <td>{{ form.email }}</td>
         </tr>
         <tr>
             <th><label for="id_info">Дополнительно сообщаю:</label></th>
-            <td><textarea id="id_info" rows="10" cols="40" name="info"></textarea></td>
+            <td>{{ form.info }}</td>
         </tr>
-        
+
         <!--tr>
             <th><label for="id_captcha_1">Captcha:</label></th>
-            <td>
-                <img src="/captcha/image/5ba2b1798e0c2d40816342c457fa817ac2b38bff/" alt="captcha" class="captcha" /> 
-                <input type="hidden" name="captcha_0" value="5ba2b1798e0c2d40816342c457fa817ac2b38bff" id="id_captcha_0" /> 
-                <input type="text" name="captcha_1" id="id_captcha_1" /></td>
+            <td>{{ form.captcha }}</td>
         </tr-->
 
     </table>
