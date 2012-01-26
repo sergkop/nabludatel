@@ -71,8 +71,8 @@ h1#newsHeader {background:url(images/news.jpg) no-repeat; text-indent:-9999px; w
 #search input[type="text"] {height:20px; width:120px; font-size:1.4em; border:none; float:left; margin:5px 0 0 5px;}
 #search input[type="submit"] {background:url(images/searchBtn.jpg) no-repeat; border:none; float:right; width:80px; height:30px; text-indent:-9999px; margin:1px 1px 0 0}
 
-.MsoNormalTable td {border: 1px solid #000;}
-
+.MsoNormalTable td {border: 1px solid #000; border-collapse: collapse;}
+.red {color: #CC0000}
 
 /* ---------------Google Custom Search widget--------------------------- */
 .gsc-control-cse {

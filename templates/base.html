@@ -36,15 +36,15 @@
                     </div>
                     <div id="headerRight" class="span-18 last">
                         <div id="headrSocial">
-                            <p>ГН в соцсетях:</p>
+                            <p>Мы в соцсетях:</p>
                             <a href="https://www.facebook.com/nabludatel.org"><img src="{{ MEDIA_URL }}images/facebook.png" /></a>
                             <a href="http://vk.com/nabludatel_org"><img src="{{ MEDIA_URL }}images/vkontakte.png" /></a>
                             <a href="https://twitter.com/#!/nabludatel_org"><img src="{{ MEDIA_URL }}images/twitter.png" /></a>
                             <a href="http://nabludatel-org.livejournal.com/"><img src="{{ MEDIA_URL }}images/livejournal.png" /></a>
                         </div>
-                        <div id="sluaghghairm">
+                        <!--div id="sluaghghairm">
                             Проект по наблюдению за выборами
-                        </div>
+                        </div-->
                     </div><!-- /#headerRight -->
                 </div><!-- /#header -->  
 
@@ -71,7 +71,7 @@
                         </li>
                         <li><a href="/about/">О проекте</a></li>
                         <li><a href="/results/">Итоги выборов</a></li>
-                        <li><a href="/library/">Библиотека наблюдателя</a></li>
+                        <li><a href="/obuchenie-nablyudatelej/">Библиотека наблюдателя</a></li>
                         <li><a href="https://forum.nabludatel.org/">Форум</a></li>
                         <li><a href="/contacts/">Контакты</a></li>
                     </ul>
@@ -86,13 +86,13 @@
                         <div class="side_section">
                             <ul id="left_menu_ul">
                                 <li><a href="/who_is/">Кто такой наблюдатель</a></li>
-                                <li><a href="/what_to_do/">Что должен делать наблюдатель</a></li>
-                                <li><a href="/why/">Зачем наблюдать за выборами</a></li>
+                                <li><a href="/chto-dolzhen-delat-nablyudatel/">Что должен делать наблюдатель</a></li>
+                                <li><a href="/nablyudateli-na-vyborah/">Зачем наблюдать за выборами</a></li>
 
-                                <li><a href="/how/">Как стать наблюдателем</a></li>
-                                <li><a href="/why-gn/">Почему именно наш проект?</a></li>
+                                <li><a href="/kak-stat-nablyudatelem/">Как стать наблюдателем</a></li>
+                                <li><a href="/nezavisimyie-nablyudateli/">Почему именно наш проект?</a></li>
                                 <li><a href="/results1/">Куда идут результаты</a></li>
-                                <li><a href="/signup/">Записаться в наблюдатели</a></li>
+                                <li><a href="/stat-nablyudatelem/">Записаться в наблюдатели</a></li>
                             </ul>
                         </div>
 
@@ -124,11 +124,11 @@
                         <div class="clear"></div>
 
                         <!--   FAQ btn -->
-                        <!--<div class="side_section">
+                        <<div class="side_section">
                             <a href="#" title="Часто задаваемые Вопросы"><img src="{{ MEDIA_URL }}images/faq.jpg" width="230" height="47" /></a>
                         </div>-->
                         <div class="side_section">
-                            <a href="/signup/" title="Записаться в наблюдатели"><img src="{{ MEDIA_URL }}images/become_observer.jpg" width="230"/></a>
+                            <a href="/stat-nablyudatelem/" title="Записаться в наблюдатели"><img src="{{ MEDIA_URL }}images/become_observer.jpg" width="220"/></a>
                         </div>
 
                     </div><!-- /#sidebar -->
@@ -170,5 +170,20 @@
     </div> <!-- /#stripeTails -->
 
     {% render_block "js" %}
+
+    <!-- Yandex.Metrika counter -->
+    <div style="display:none;"><script type="text/javascript">
+    (function(w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter11820652 = new Ya.Metrika({id:11820652, enableAll: true, webvisor:true});
+            }
+            catch(e) { }
+        });
+    })(window, "yandex_metrika_callbacks");
+    </script></div>
+    <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+    <noscript><div><img src="//mc.yandex.ru/watch/11820652" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 </html>
