@@ -119,6 +119,8 @@ INSTALLED_APPS = (
     'cms.plugins.twitter',
     'tinymce',
 
+    'observers',
+
     'filer',
     #'easy_thumbnails',
     'cmsplugin_filer_file',
@@ -129,9 +131,7 @@ INSTALLED_APPS = (
 
     'reversion',
 
-    #'loginza',
-    #'users',
-
+    'captcha',
     'tagging',
     'zinnia',
     'zinnia.plugins',
@@ -160,12 +160,6 @@ LOGGING = {
         },
     }
 }
-
-# Loginza settings
-#LOGINZA_DEFAULT_PROVIDERS_SET = 'google,vkontakte,facebook,livejournal,yandex,mailru,twitter,rambler,odnoklassniki'
-
-# !!!! can't use reverse url resolver here (raises ImportError), so we should carefully control paths
-#LOGINZA_AMNESIA_PATHS = ('/users/complete_registration/',)
 
 TINYMCE_JS_URL = MEDIA_URL + 'libs/tiny_mce/tiny_mce.js'
 TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'libs/tiny_mce')

@@ -1,66 +1,56 @@
 {% extends "base.html" %}
-{% load i18n comments zinnia_tags %}
+{% load zinnia_tags %}
 
 {% block title %}{{ object.title }}{% endblock %}
 
-{% block meta-description %}{% if object.excerpt %}{{ object.excerpt|striptags }}{% else %}{{ object.content|striptags|truncatewords:100 }}{% endif %}{% endblock %}
-
-{% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}{% endif %}{% endblock %}
-
-
 {% block content %}
 
+    {% with object_content=object.html_content|safe %}
+        {% include "zinnia/_entry_detail.html" %}
+    {% endwith %}
 
-{% with object_content=object.html_content|safe %}
-{% include "zinnia/_entry_detail.html" %}
-{% endwith %}
+    <script type="text/javascript">
+        VK.init({apiId: 2749623, onlyWidgets: true});
+    </script>
 
-<div class="entry-widgets">
-  {% with next_entry=object.next_entry %}
-  {% if next_entry %}
-  <div class="entry-next">
-    <h3>Следующая запись</h3>
-    <p>
-      <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
-        {{ next_entry.title }}
-      </a>
-    </p>
-  </div>
-  {% endif %}
-  {% endwith %}
-  {% with previous_entry=object.previous_entry %}
-  {% if previous_entry %}
-  <div class="entry-previous">
-    <h3>Предыдущая запись</h3>
-    <p>
-      <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
-        {{ previous_entry.title }}
-      </a>
-    </p>
-  </div>
-  {% endif %}
-  {% endwith %}
-</div>
+    <div id="vk_comments"></div>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", {limit: 5, width: "496", attach: "*"});
+    </script>
 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-<script type="text/javascript">
-    VK.init({apiId: 2749623, onlyWidgets: true});
-</script>
+    <div class="fb-comments" data-href="http://50.57.138.39/" data-num-posts="4" data-width="490"></div>
 
-<div id="vk_comments"></div>
-<script type="text/javascript">
-VK.Widgets.Comments("vk_comments", {limit: 5, width: "496", attach: "*"});
-</script>
+    <div class="entry-widgets">
+        {% with next_entry=object.next_entry %}
+        {% if next_entry %}
+        <div class="entry-next">
+            <h4>Следующая запись</h4>
+            <p><a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">{{ next_entry.title }}</a></p>
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% with previous_entry=object.previous_entry %}
+        {% if previous_entry %}
+        <div class="entry-previous">
+            <h4>Предыдущая запись</h4>
+            <p>
+            <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
+                {{ previous_entry.title }}
+            </a>
+            </p>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
 
-<div class="fb-comments" data-href="http://50.57.138.39/" data-num-posts="4" data-width="490"></div>
-{% endblock %}
-
-{% block admin_tools %}
-{% if perms.zinnia.change_entry %}
-<li>
-  <a href="{% url admin:zinnia_entry_change object.pk %}" title="{% trans "Edit the entry" %}">
-    Редактировать запись
-  </a>
-</li>
-{% endif %}
 {% endblock %}

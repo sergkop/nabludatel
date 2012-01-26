@@ -1,196 +1,174 @@
 {% load cms_tags sekizai_tags %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
-<head>
-    <title>Гражданин Наблюдатель | {% page_attribute page_title %}</title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Система постоянного общественного сопровождения процесса организации и проведения избирательных кампаний в государстве. {% page_attribute meta_description %}"/>
-    <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-    <link href="{{ MEDIA_URL }}css/layout.css" rel="stylesheet" type="text/css" />
-    <!--[if lte IE 7]>
-    <link href="{{ MEDIA_URL }}css/patches/patch_layout.css" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    {% render_block "css" %}
-    <!--link href="{{ MEDIA_URL }}zinnia/css/screen.css" type="text/css" rel="stylesheet" /-->
-    <link href="{{ MEDIA_URL }}css/style.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
-    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?47"></script>
-    <script type="text/javascript">
-        VK.init({apiId: 2749623, onlyWidgets: true});
-    </script>
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Гражданин наблюдатель | {% block title %}{% page_attribute page_title %}{% endblock %}</title>
+        <meta name="description" content="Система постоянного общественного сопровождения процесса организации и проведения избирательных кампаний в государстве. {% page_attribute meta_description %}"/>
+        <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Framework CSS -->
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" type="text/css" media="screen, projection">
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print">
+        <!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
-<div id="header" role="banner">
-    <div class="page_margins">
-        <div class="page">
-            <a href="/" id="logo"><img src="{{ MEDIA_URL }}images/logo.jpg" alt="Гражданин Наблюдатель"/></a>
-            <h1>
-                <a href="/" id="title_link">Мы делаем выборы честными</a>
-            </h1>
-        </div>
-    </div>
-</div>
+        <link rel="stylesheet" href="{{ MEDIA_URL }}style.css" type="text/css" media="screen, projection">
+        <!--link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" /-->
+        <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?47"></script>
+        <script type="text/javascript">
+            VK.init({apiId: 2749623, onlyWidgets: true});
+        </script>
 
-<!-- begin: main navigation #nav -->
-<div id="nav" role="navigation">
-  <div class="page_margins">
-    <div class="page">
-      <div class="hlist">
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/about/">О проекте</a></li>
-            <li><a href="/results/">Итоги выборов</a></li>
-            <li><a href="/library/">Библиотека наблюдателя</a></li>
-            <li><a href="https://forum.nabludatel.org/">Форум</a></li>
-            <li><a href="/contacts/">Контакты</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end: main navigation -->
+        {% render_block "css" %}
+    </head>
+    <body>
+    <div id="stripeTails">
+        <div id="bgContainer">
+            <div class="container">
 
-<!-- begin: main content area #main -->
-<div id="main">
-    <div class="page_margins">
-        <div class="page">
-            <!-- begin: #col1 - first float column -->
-            <div id="col1" role="complementary">
-                <div id="col1_content" class="clearfix">
-                    <h3 class="side_menu_header">Для наблюдателей</h3>
-                    <div class="side_section">
-                        <ul id="left_menu_ul">
-                            <li><a href="/who_is/">Кто такой наблюдатель</a></li>
-                            <li><a href="/what_to_do/">Что должен делать наблюдатель</a></li>
-                            <li><a href="/why/">Зачем наблюдать за выборами</a></li>
-                            <li><a href="/how/">Как стать наблюдателем</a></li>
-                            <li><a href="/why-gn/">Почему именно ГН?</a></li>
-                            <li><a href="/results1/">Куда идут результаты</a></li>
-                            <li><a href="/signup/">Записаться в наблюдатели</a></li>
-                        </ul>
+                <!-- #header -->      
+                <div id="header" class="span-24 last">
+                    <div class="span-6">
+                        <a id="logo" href="/">
+                            <img alt="Гражданин Наблюдатель" src="{{ MEDIA_URL }}images/logo.jpg">
+                        </a>
+                    </div>
+                    <div id="headerRight" class="span-18 last">
+                        <div id="headrSocial">
+                            <p>ГН в соцсетях:</p>
+                            <a href="https://www.facebook.com/nabludatel.org"><img src="{{ MEDIA_URL }}images/facebook.png" /></a>
+                            <a href="http://vk.com/nabludatel_org"><img src="{{ MEDIA_URL }}images/vkontakte.png" /></a>
+                            <a href="https://twitter.com/#!/nabludatel_org"><img src="{{ MEDIA_URL }}images/twitter.png" /></a>
+                            <a href="http://nabludatel-org.livejournal.com/"><img src="{{ MEDIA_URL }}images/livejournal.png" /></a>
+                        </div>
+                        <div id="sluaghghairm">
+                            Проект по наблюдению за выборами
+                        </div>
+                    </div><!-- /#headerRight -->
+                </div><!-- /#header -->  
 
+                <!-- #menu --> 
+                <div class="span-24 last">
+                    <ul id="menu">
+                        <li>
+                            <a href="/">Главная</a>
+                            <!--<ul id="help">
+                                <li>
+                                    <img class="corner_inset_left" alt="" src="{{ MEDIA_URL }}images/corner_inset_left.png"/>
+                                    <a href="#">Страница 1</a>
+                                    <img class="corner_inset_right" alt="" src="{{ MEDIA_URL }}images/corner_inset_right.png"/>
+                                </li>
+                                <li><a href="#">Страница 2</a></li>
+                                <li><a href="#">Страница с&nbsp;длинным предлинным названием 3</a></li>
+                                <li><a href="#">Страница 4</a></li>
+                                <li class="last">
+                                    <img class="corner_left" alt="" src="{{ MEDIA_URL }}images/corner_left.png"/>
+                                    <img class="middle" alt="" src="{{ MEDIA_URL }}images/dot_blue.png"/>
+                                    <img class="corner_right" alt="" src="{{ MEDIA_URL }}images/corner_right.png"/>
+                                </li>
+                            </ul>-->
+                        </li>
+                        <li><a href="/about/">О проекте</a></li>
+                        <li><a href="/results/">Итоги выборов</a></li>
+                        <li><a href="/library/">Библиотека наблюдателя</a></li>
+                        <li><a href="https://forum.nabludatel.org/">Форум</a></li>
+                        <li><a href="/contacts/">Контакты</a></li>
+                    </ul>
+                </div><!-- /#menu --> 
+
+                <!-- #mainContent -->
+                <div id="mainContent" class="span-24 last">
+
+                    <!-- #sidebar -->
+                    <div id="sidebar"  class="span-6">
+                        <h3 class="side_menu_header">Для наблюдателей</h3>
+                        <div class="side_section">
+                            <ul id="left_menu_ul">
+                                <li><a href="/who_is/">Кто такой наблюдатель</a></li>
+                                <li><a href="/what_to_do/">Что должен делать наблюдатель</a></li>
+                                <li><a href="/why/">Зачем наблюдать за выборами</a></li>
+
+                                <li><a href="/how/">Как стать наблюдателем</a></li>
+                                <li><a href="/why-gn/">Почему именно наш проект?</a></li>
+                                <li><a href="/results1/">Куда идут результаты</a></li>
+                                <li><a href="/signup/">Записаться в наблюдатели</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="http://money.yandex.ru/" class="ya_logo">
+                                <img width="51" height="22" border="0" src="{{ MEDIA_URL }}images/ya_m.jpg" style="margin-left: 5px;"/>
+                            </a>
+                            <h3 class="side_menu_header">Сбор средств</h3>
+                        </div>
+                        <div class="side_section" id="donations">
+                            <!-- Виджет сбора пожертвований -->
+                            <form style="margin: 0pt; padding: 0pt;" action="https://money.yandex.ru/charity.xml" method="post">
+                                <input type="hidden" name="to" value="410011201436323"/>
+                                <input type="hidden" name="Company" value=""/>
+                                <input type="hidden" name="CompanyLink" value=""/>
+    
+                                <div class="clearfix">
+                                    <input type="text" id="CompanySum" name="CompanySum" value="100" size="4"/>
+                                    <input type="submit" value="Отправить"/>
+                                </div>
+                            </form>
+
+                            <div id="donationsInfo">
+                                рублей на счет <a href="http://yaudit.org/yaudit/410011201436323">410011201436323</a>
+                            </div>
+
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <!--   FAQ btn -->
+                        <!--<div class="side_section">
+                            <a href="#" title="Часто задаваемые Вопросы"><img src="{{ MEDIA_URL }}images/faq.jpg" width="230" height="47" /></a>
+                        </div>-->
+                        <div class="side_section">
+                            <a href="#" title="Записаться в наблюдатели"><img src="{{ MEDIA_URL }}images/become_observer.jpg" width="230"/></a>
+                        </div>
+
+                    </div><!-- /#sidebar -->
+
+                    <!-- #content -->
+                    <div id="content"  class="prepend-1 span-17 last">
+                        {% block content %}{% endblock %}
+                    </div><!-- /#content -->        
+                </div><!-- /#mainContent -->
+
+                {% block page_bottom %}{% endblock %}
+
+                <!-- #footer -->
+                <div id="footer" class="span-24 last">
+                    <hr />
+                    <p class="span-7">&copy; Гражданин Наблюдатель, 2010-2011 </p>
+                    <div class="prepend-11 span-6 last" id="search">
+                        <!-- Виджет сбора пожертвований -->
                         <div id="cse-search-form" style="width: 100%;">Loading</div>
                         <script src="http://www.google.com/jsapi" type="text/javascript"></script>
                         <script type="text/javascript"> 
-                        google.load('search', '1', {language : 'ru'});
-                        google.setOnLoadCallback(function() {
-                            var customSearchControl = new google.search.CustomSearchControl(
-                            '007084942556480968662:efy46j0mxa8');
+                            google.load('search', '1', {language : 'ru'});
+                            google.setOnLoadCallback(function() {
+                                var customSearchControl = new google.search.CustomSearchControl(
+                                '007084942556480968662:efy46j0mxa8');
 
-                            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-                            var options = new google.search.DrawOptions();
-                            options.enableSearchboxOnly("http://127.0.0.1:8000/search_results");
-                            customSearchControl.draw('cse-search-form', options);
-                        }, true);
+                                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                                var options = new google.search.DrawOptions();
+                                options.enableSearchboxOnly("http://127.0.0.1:8000/search_results");
+                                customSearchControl.draw('cse-search-form', options);
+                            }, true);
                         </script>
                     </div>
+                </div><!-- /#footer -->
 
-                    <!--
-                    <h3 class="side_menu_header">Наши друзья</h3>
-                    <div class="side_section">
-
-                        <a class="link_banner" href="http://www.kartanarusheniy.ru/">
-                            <img border="0" alt="КАРТА НАРУШЕНИЙ НА ВЫБОРАХ"
-                                title="Карта нарушений на выборах. Совместный проект ¨Газеты.Ru¨ и Ассоциации ¨Голос¨ "
-                                src="http://files.kartanarusheniy.ru/adv/240-400.gif" />
-                        </a>
-
-                        <a class="link_banner" href="http://www.golos.org">
-                            <img border="0" alt="Ассоциация ¨Голос¨" title="Ассоциация ¨Голос¨"
-                                    src="http://a3.sphotos.ak.fbcdn.net/hphotos-ak-ash2/150348_168941373137020_168939573137200_387318_8024140_n.jpg" />
-                        </a>
-
-                    </div>
-                    -->
-                </div>
-            </div>
-            <!-- end: #col1 -->
-
-            <!-- begin: #col2 second float column -->
-            <div id="col2" role="complementary">
-                <div id="col2_content" class="clearfix">
-                    <h3 class="side_menu_header attention">Сбор средств</h3>
-                    <div class="side_section">
-                        <!-- Виджет сбора пожертвований -->
-                        <form method="post" action="https://money.yandex.ru/charity.xml" style="margin: 0; padding: 0;">
-                            <input type="hidden" value="410011201436323" name="to" />
-                            <input type="hidden" value="" name="Company" />
-                            <input type="hidden" value="" name="CompanyLink" />
-                            <input type="submit" style="margin-right: 5px;" value="Отправить" />
-                            <input type="text" style="margin-right: 5px;" size="4" value="100" name="CompanySum" id="CompanySum" />
-                            <span style="font: 70% Verdana, Arial, Geneva CY, Sans-Serif;"><strong>рублей</strong></span>
-                            <div class="ya_account_number">на счет <a style="color: #006600; font-weight: bold;" href="http://yaudit.org/yaudit/410011201436323">410011201436323</a>&nbsp;<span style="color: #666666;"></span></div>
-                            <a class="ya_logo" href="http://money.yandex.ru/"><img width="90" border="0" height="39" style="margin-left: 5px;" src="https://img.yandex.net/i/ym-logo.gif" /></a>
-                        </form>
-                    </div>
-
-                    <h3 class="side_menu_header">Мы в соц. сетях</h3>
-                    <div class="side_section">
-                        <a href="http://nabludatel_org.livejournal.com">
-                            <img width="204" border="5" height="50" alt="Гражданин наблюдатель в Живом Журнале"
-                                title="ЖЖ Гражданин наблюдатель" src="http://pics.livejournal.com/djatel_2008/pic/0000e6ds" />
-                        </a>
-                        <div class="content">
-                            <a href="http://twitter.com/nabludatel_org" class="twitter-follow-button" data-lang="ru" data-show-count="false">Читать @nabludatel_org</a>
-                            <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-                        </div>
-
-                        <div style="margin: 10px;">
-                            <div class="fb-like" data-href="https://www.facebook.com/nabludatel.org" data-send="false" data-width="250" data-show-faces="false" data-font="lucida grande"></div>
-                        </div>
-
-                        <!-- VK Widget -->
-                        <div id="vk_like"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Like("vk_like", {type: "mini", height: 20});
-                        </script>
-                    </div>
-                </div>
-            </div>
-            <!-- end: #col2 -->
-
-            <!-- begin: #col3 static column -->
-            <div id="col3" role="main">
-                <div id="col3_content" class="clearfix">
-                    {% block content %}{% endblock %}
-                </div>
-                <div id="ie_clearing">&nbsp;</div>
-                <!-- End: IE Column Clearing -->
-            </div>
-            <!-- end: #col3 -->
-        </div>
-    </div>
-</div>
-<!-- end: #main -->
-
-<!-- begin: #footer -->
-<div id="footer" role="contentinfo">
-    <div class="page_margins">
-        <div class="page" style="text-align: center;">
-            Гражданин Наблюдатель, 2010-2011
-        </div>
-    </div>
-</div>
-
+            </div><!-- /.container -->
+            <div id="footerBtm"></div>
+        </div><!-- /#bgContainer -->
+    </div> <!-- /#stripeTails -->
 
     {% render_block "js" %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}libs/jquery/jquery.js"></script>
-    <!--script>
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script-->
-
 </body>
 </html>

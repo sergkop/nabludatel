@@ -4,7 +4,43 @@
 {% load zinnia_tags %}
 
 {% block content %}
-    {% show_placeholder "template_1_content" "main" %}
 
-    {% get_recent_entries 3 "zinnia/entries_list.html" %}
+    <a href="/join" id="banner">
+        &laquo;Гражданин наблюдатель&raquo;&nbsp;&mdash; некоммерческий, непартийный проект по&nbsp;наблюдению
+        за&nbsp;законностью хода выборов в&nbsp;России.<br />
+        <strong>Нам нужны новые лица в&nbsp;команде.</strong> Присоединяйтесь!
+    </a>
+
 {% endblock %}
+
+{% block page_bottom %}
+    <!-- #news -->
+    <div id="news" class="span-24 last">
+        <a href="{% url zinnia_entry_archive_index %}">
+            <h1 id="newsHeader">Новости</h1>
+        </a>
+        <div class="newsBlock span-8">
+            <small>{{ news.0.creation_date|date:"j.n.Y" }}</small>
+            <h3><a href="{{ news.0.get_absolute_url }}">{{ news.0.title }}</a></h3>
+            {{ news.0.html_content|truncatewords_html:50|safe }}
+        </div>
+        <div class="newsBlock span-8">
+            <small>{{ news.1.creation_date|date:"j.n.Y" }}</small>
+            <h3><a href="{{ news.1.get_absolute_url }}">{{ news.1.title }}</a></h3>
+            {{ news.1.html_content|truncatewords_html:50|safe }}
+        </div>
+        <div class="newsBlock span-8 last"><!-- ПРОГРАММИСТУ, ВАЖНО: здесь должен идти счетчик, который добавит к третьему  последнему блоку класс .last, он убирает границу у элемента -->
+            <small>{{ news.2.creation_date|date:"j.n.Y" }}</small>
+            <h3><a href="{{ news.2.get_absolute_url }}">{{ news.2.title }}</a></h3>
+            {{ news.2.html_content|truncatewords_html:50|safe }}
+        </div>
+    </div><!-- /#news -->
+    
+    <!--<a href="{% url zinnia_entry_latest_feed %}" class="feeds">RSS</a>
+        <a href="{% url zinnia_entry_archive_index %}" title="Zinnia's Blog" rel="home">новости</a>-->
+    
+{% endblock %}
+
+{% show_placeholder "template_1_content" "main" %}
+
+{% get_recent_entries 3 "zinnia/entries_list.html" %}
