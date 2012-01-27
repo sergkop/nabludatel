@@ -9,23 +9,46 @@
         {% csrf_token %}
         <tr>
             <th><label for="id_full_name">Как вас зовут (ФИО): <span class="red">*</span></label></th>
-            <td>{{ form.full_name }}</td>
+            <td>
+                {{ form.full_name }}
+                {% if form.full_name.errors %}<div style="color:red;">Введите свое имя</div>{% endif %}
+            </td>
         </tr>
         <tr>
             <th><label for="id_telephone">Ваш контактный телефон: <span class="red">*</span></label></th>
-            <td>{{ form.telephone }}</td>
+            <td>
+                {{ form.telephone }}
+                {% if form.full_name.errors %}<div style="color:red;">Введите ваш телефон</div>{% endif %}
+            </td>
         </tr>
+        
+        <tr>
+            <th>
+                <label for="id_in_moscow">Вы из Московской области?: <span class="red">*</span></label>
+            </th>
+            <td>
+                {{ form.in_moscow }}
+            </td>
+
+        </tr>
+
         <tr>
             <th><label for="id_location">Место жительства: <span class="red">*</span></label></th>
-            <td>{{ form.location }}</td>
+            <td>
+                {{ form.location }}
+                <div style="font-size: small;">Для жителей Москвы - район проживания, для жителей Московской области - район и населенный пункт.</div>
+
+                {% if form.location.errors %}<div style="color:red;">Укажите район в котором проживаете</div>{% endif %}
+            </td>
         </tr>
-        <tr>
-            <th><label for="id_in_moscow">В Москве: <span class="red">*</span></label></th>
-            <td>{{ form.in_moscow }}</td>
-        </tr>
+        
         <tr>
             <th><label for="id_email">Ваш адрес электронной почты: <span class="red">*</span></label></th>
-            <td>{{ form.email }}</td>
+            <td>
+                {{ form.email }}
+                {% if form.email.errors %}<div style="color:red;">Email указан неверно</div>{% endif %}
+            </td>
+            
         </tr>
         <tr>
             <th><label for="id_info">Дополнительно сообщаю:</label></th>
