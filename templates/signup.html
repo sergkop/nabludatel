@@ -4,11 +4,13 @@
 
 <h2>Я хочу стать наблюдателем</h2>
 
+Вы можете быть наблюдателем в том месте, где проживаете, независимо от Вашей прописки/регистрации.
+
 <form action="{% url signup %}" method="post">
     <table>
         {% csrf_token %}
         <tr>
-            <th><label for="id_full_name">Как вас зовут (ФИО): <span class="red">*</span></label></th>
+            <th><label for="id_full_name">Как вас зовут (ФИО полностью): <span class="red">*</span></label></th>
             <td>
                 {{ form.full_name }}
                 {% if form.full_name.errors %}<div style="color:red;">Введите свое имя</div>{% endif %}
@@ -18,16 +20,20 @@
             <th><label for="id_telephone">Ваш контактный телефон: <span class="red">*</span></label></th>
             <td>
                 {{ form.telephone }}
-                {% if form.full_name.errors %}<div style="color:red;">Введите ваш телефон</div>{% endif %}
+                {% if form.telephone.errors %}<div style="color:red;">Введите ваш телефон</div>{% endif %}
             </td>
         </tr>
-        
+
         <tr>
             <th>
-                <label for="id_in_moscow">Вы из Московской области?: <span class="red">*</span></label>
+                Ваш регион: <span class="red">*</span>
             </th>
             <td>
-                {{ form.in_moscow }}
+                <input type="radio" name="in_moscow" value="yes" id="id_in_moscow" checked="true"/>
+                <label for="id_in_moscow">Московская область</label>
+                
+                <input type="radio" name="in_moscow" value="no" id="id_not_in_moscow" />
+                <label for="id_not_in_moscow">Другой регион</label>
             </td>
 
         </tr>
